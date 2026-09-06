@@ -1,0 +1,1313 @@
+{
+  "method": "nauty geng; local graph6 decoder; minimum-rooted DFS",
+  "geng_executable": "/opt/homebrew/bin/geng",
+  "values": [
+    {
+      "n": 3,
+      "unlabeled_graph_count": 4,
+      "f_n": 2,
+      "cycle_sets": [
+        {
+          "lengths": [],
+          "witness_graph6": "B?"
+        },
+        {
+          "lengths": [
+            3
+          ],
+          "witness_graph6": "Bw"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "unlabeled_graph_count": 11,
+      "f_n": 4,
+      "cycle_sets": [
+        {
+          "lengths": [],
+          "witness_graph6": "C?"
+        },
+        {
+          "lengths": [
+            3
+          ],
+          "witness_graph6": "CT"
+        },
+        {
+          "lengths": [
+            3,
+            4
+          ],
+          "witness_graph6": "C^"
+        },
+        {
+          "lengths": [
+            4
+          ],
+          "witness_graph6": "C]"
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "unlabeled_graph_count": 34,
+      "f_n": 6,
+      "cycle_sets": [
+        {
+          "lengths": [],
+          "witness_graph6": "D??"
+        },
+        {
+          "lengths": [
+            3
+          ],
+          "witness_graph6": "DCc"
+        },
+        {
+          "lengths": [
+            3,
+            4
+          ],
+          "witness_graph6": "DEs"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5
+          ],
+          "witness_graph6": "DUw"
+        },
+        {
+          "lengths": [
+            4
+          ],
+          "witness_graph6": "DEo"
+        },
+        {
+          "lengths": [
+            5
+          ],
+          "witness_graph6": "DUW"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "unlabeled_graph_count": 156,
+      "f_n": 11,
+      "cycle_sets": [
+        {
+          "lengths": [],
+          "witness_graph6": "E???"
+        },
+        {
+          "lengths": [
+            3
+          ],
+          "witness_graph6": "E?aG"
+        },
+        {
+          "lengths": [
+            3,
+            4
+          ],
+          "witness_graph6": "E?rG"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5
+          ],
+          "witness_graph6": "ECrO"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "witness_graph6": "EEjo"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6
+          ],
+          "witness_graph6": "EEho"
+        },
+        {
+          "lengths": [
+            4
+          ],
+          "witness_graph6": "E?r?"
+        },
+        {
+          "lengths": [
+            4,
+            5
+          ],
+          "witness_graph6": "ECxo"
+        },
+        {
+          "lengths": [
+            4,
+            6
+          ],
+          "witness_graph6": "EEj_"
+        },
+        {
+          "lengths": [
+            5
+          ],
+          "witness_graph6": "ECpO"
+        },
+        {
+          "lengths": [
+            6
+          ],
+          "witness_graph6": "EEh_"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "unlabeled_graph_count": 1044,
+      "f_n": 21,
+      "cycle_sets": [
+        {
+          "lengths": [],
+          "witness_graph6": "F????"
+        },
+        {
+          "lengths": [
+            3
+          ],
+          "witness_graph6": "F?ACG"
+        },
+        {
+          "lengths": [
+            3,
+            4
+          ],
+          "witness_graph6": "F?BEG"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5
+          ],
+          "witness_graph6": "F?bEO"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "witness_graph6": "F?qfO"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "FCpf_"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "witness_graph6": "FCpbo"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "witness_graph6": "FEhe_"
+        },
+        {
+          "lengths": [
+            3,
+            5
+          ],
+          "witness_graph6": "FCQbo"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6
+          ],
+          "witness_graph6": "F?qbO"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "FCpdg"
+        },
+        {
+          "lengths": [
+            3,
+            6,
+            7
+          ],
+          "witness_graph6": "FCpd_"
+        },
+        {
+          "lengths": [
+            4
+          ],
+          "witness_graph6": "F?BE?"
+        },
+        {
+          "lengths": [
+            4,
+            5
+          ],
+          "witness_graph6": "F?bbO"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "FCpv?"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            7
+          ],
+          "witness_graph6": "FCpb_"
+        },
+        {
+          "lengths": [
+            4,
+            6
+          ],
+          "witness_graph6": "F?qf?"
+        },
+        {
+          "lengths": [
+            5
+          ],
+          "witness_graph6": "F?bAO"
+        },
+        {
+          "lengths": [
+            5,
+            6
+          ],
+          "witness_graph6": "FCR`o"
+        },
+        {
+          "lengths": [
+            6
+          ],
+          "witness_graph6": "F?qb?"
+        },
+        {
+          "lengths": [
+            7
+          ],
+          "witness_graph6": "FCp`_"
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "unlabeled_graph_count": 12346,
+      "f_n": 40,
+      "cycle_sets": [
+        {
+          "lengths": [],
+          "witness_graph6": "G?????"
+        },
+        {
+          "lengths": [
+            3
+          ],
+          "witness_graph6": "G??CCC"
+        },
+        {
+          "lengths": [
+            3,
+            4
+          ],
+          "witness_graph6": "G??EEC"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5
+          ],
+          "witness_graph6": "G?AEEG"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "witness_graph6": "G?BDFG"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "G?bBFO"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "G?qabg"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          "witness_graph6": "G?qado"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "witness_graph6": "G?bBBW"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "witness_graph6": "G?qa`w"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            6
+          ],
+          "witness_graph6": "G?`afo"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "witness_graph6": "G?bBdo"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "G?qadg"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            7,
+            8
+          ],
+          "witness_graph6": "GCp`eO"
+        },
+        {
+          "lengths": [
+            3,
+            5
+          ],
+          "witness_graph6": "G?`DBW"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6
+          ],
+          "witness_graph6": "G?BDBG"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "G?bBDS"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "G?otQw"
+        },
+        {
+          "lengths": [
+            3,
+            6
+          ],
+          "witness_graph6": "G?`ado"
+        },
+        {
+          "lengths": [
+            3,
+            6,
+            7
+          ],
+          "witness_graph6": "G?bBDO"
+        },
+        {
+          "lengths": [
+            3,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "G?qa`k"
+        },
+        {
+          "lengths": [
+            3,
+            7,
+            8
+          ],
+          "witness_graph6": "G?qa`g"
+        },
+        {
+          "lengths": [
+            4
+          ],
+          "witness_graph6": "G??EE?"
+        },
+        {
+          "lengths": [
+            4,
+            5
+          ],
+          "witness_graph6": "G?AFBG"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6
+          ],
+          "witness_graph6": "G?`F`w"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "G?bFBo"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "G?q`v_"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            7
+          ],
+          "witness_graph6": "G?bBBO"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            8
+          ],
+          "witness_graph6": "GCQb`o"
+        },
+        {
+          "lengths": [
+            4,
+            6
+          ],
+          "witness_graph6": "G?BDF?"
+        },
+        {
+          "lengths": [
+            4,
+            6,
+            8
+          ],
+          "witness_graph6": "G?qad_"
+        },
+        {
+          "lengths": [
+            4,
+            7
+          ],
+          "witness_graph6": "G?bB`o"
+        },
+        {
+          "lengths": [
+            5
+          ],
+          "witness_graph6": "G?AEAG"
+        },
+        {
+          "lengths": [
+            5,
+            6
+          ],
+          "witness_graph6": "G?`F@W"
+        },
+        {
+          "lengths": [
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "G?`e`o"
+        },
+        {
+          "lengths": [
+            5,
+            6,
+            8
+          ],
+          "witness_graph6": "G?q`qg"
+        },
+        {
+          "lengths": [
+            5,
+            8
+          ],
+          "witness_graph6": "G?qa`o"
+        },
+        {
+          "lengths": [
+            6
+          ],
+          "witness_graph6": "G?BDB?"
+        },
+        {
+          "lengths": [
+            7
+          ],
+          "witness_graph6": "G?bB@O"
+        },
+        {
+          "lengths": [
+            8
+          ],
+          "witness_graph6": "G?qa`_"
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "unlabeled_graph_count": 274668,
+      "f_n": 75,
+      "cycle_sets": [
+        {
+          "lengths": [],
+          "witness_graph6": "H??????"
+        },
+        {
+          "lengths": [
+            3
+          ],
+          "witness_graph6": "H???CA@"
+        },
+        {
+          "lengths": [
+            3,
+            4
+          ],
+          "witness_graph6": "H???EB@"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5
+          ],
+          "witness_graph6": "H??CEBA"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "witness_graph6": "H??EDBa"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "H?AEBBc"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "H?BDA`q"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bB@bw"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            9
+          ],
+          "witness_graph6": "H?bB@`["
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          "witness_graph6": "H?BDAas"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bB@bW"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            6,
+            9
+          ],
+          "witness_graph6": "H?b@bPX"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "witness_graph6": "H?AEB@e"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "witness_graph6": "H?BDA_u"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "witness_graph6": "H?b@b_y"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            5,
+            7,
+            9
+          ],
+          "witness_graph6": "H?`af@X"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            6
+          ],
+          "witness_graph6": "H?ABAbs"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "witness_graph6": "H?AEBas"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "H?BDAaq"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bB@aw"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            7,
+            8
+          ],
+          "witness_graph6": "H?BDAoy"
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            7,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bB@a["
+        },
+        {
+          "lengths": [
+            3,
+            4,
+            8,
+            9
+          ],
+          "witness_graph6": "H?qa`bG"
+        },
+        {
+          "lengths": [
+            3,
+            5
+          ],
+          "witness_graph6": "H?AAD@e"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6
+          ],
+          "witness_graph6": "H??ED@a"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "H?AEBAd"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "H?B@dP["
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bBDhY"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            7,
+            9
+          ],
+          "witness_graph6": "H?bBD`Y"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            8
+          ],
+          "witness_graph6": "H?B@dPX"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bB@aY"
+        },
+        {
+          "lengths": [
+            3,
+            5,
+            6,
+            9
+          ],
+          "witness_graph6": "H?bB@`Y"
+        },
+        {
+          "lengths": [
+            3,
+            6
+          ],
+          "witness_graph6": "H?ABAas"
+        },
+        {
+          "lengths": [
+            3,
+            6,
+            7
+          ],
+          "witness_graph6": "H?AEBAc"
+        },
+        {
+          "lengths": [
+            3,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "H?BDA_r"
+        },
+        {
+          "lengths": [
+            3,
+            6,
+            7,
+            8,
+            9
+          ],
+          "witness_graph6": "H?b@bEY"
+        },
+        {
+          "lengths": [
+            3,
+            7
+          ],
+          "witness_graph6": "H?`D@`["
+        },
+        {
+          "lengths": [
+            3,
+            7,
+            8
+          ],
+          "witness_graph6": "H?BDA_q"
+        },
+        {
+          "lengths": [
+            3,
+            7,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bB@aX"
+        },
+        {
+          "lengths": [
+            3,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bB@aW"
+        },
+        {
+          "lengths": [
+            4
+          ],
+          "witness_graph6": "H???EB?"
+        },
+        {
+          "lengths": [
+            4,
+            5
+          ],
+          "witness_graph6": "H??CF@a"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6
+          ],
+          "witness_graph6": "H?AAF_u"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "H?AEF@s"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "H?BDB_{"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "witness_graph6": "H?bBD`w"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            7,
+            9
+          ],
+          "witness_graph6": "H?bB@`w"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            8
+          ],
+          "witness_graph6": "H?BD@xY"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            6,
+            9
+          ],
+          "witness_graph6": "H?`ad_w"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            7
+          ],
+          "witness_graph6": "H?AEB@c"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "witness_graph6": "H?`DB_{"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            7,
+            9
+          ],
+          "witness_graph6": "H?bB@_{"
+        },
+        {
+          "lengths": [
+            4,
+            5,
+            8
+          ],
+          "witness_graph6": "H?BDAo{"
+        },
+        {
+          "lengths": [
+            4,
+            6
+          ],
+          "witness_graph6": "H??EDB_"
+        },
+        {
+          "lengths": [
+            4,
+            6,
+            7,
+            9
+          ],
+          "witness_graph6": "H?bB@po"
+        },
+        {
+          "lengths": [
+            4,
+            6,
+            8
+          ],
+          "witness_graph6": "H?BDAao"
+        },
+        {
+          "lengths": [
+            4,
+            7
+          ],
+          "witness_graph6": "H?AEB_s"
+        },
+        {
+          "lengths": [
+            4,
+            7,
+            9
+          ],
+          "witness_graph6": "H?bB@_w"
+        },
+        {
+          "lengths": [
+            4,
+            8
+          ],
+          "witness_graph6": "H?BDAow"
+        },
+        {
+          "lengths": [
+            5
+          ],
+          "witness_graph6": "H??CE@A"
+        },
+        {
+          "lengths": [
+            5,
+            6
+          ],
+          "witness_graph6": "H?AAF?e"
+        },
+        {
+          "lengths": [
+            5,
+            6,
+            7
+          ],
+          "witness_graph6": "H?ABE_s"
+        },
+        {
+          "lengths": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "witness_graph6": "H?BDbO["
+        },
+        {
+          "lengths": [
+            5,
+            6,
+            7,
+            9
+          ],
+          "witness_graph6": "H?`acgi"
+        },
+        {
+          "lengths": [
+            5,
+            6,
+            8
+          ],
+          "witness_graph6": "H?BD@hQ"
+        },
+        {
+          "lengths": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "witness_graph6": "H?`ad_["
+        },
+        {
+          "lengths": [
+            5,
+            6,
+            9
+          ],
+          "witness_graph6": "H?bB@`W"
+        },
+        {
+          "lengths": [
+            5,
+            7,
+            8
+          ],
+          "witness_graph6": "H?`DB_["
+        },
+        {
+          "lengths": [
+            5,
+            8
+          ],
+          "witness_graph6": "H?BDA_s"
+        },
+        {
+          "lengths": [
+            6
+          ],
+          "witness_graph6": "H??ED@_"
+        },
+        {
+          "lengths": [
+            6,
+            7
+          ],
+          "witness_graph6": "H?`@f?["
+        },
+        {
+          "lengths": [
+            6,
+            8
+          ],
+          "witness_graph6": "H?B@dPW"
+        },
+        {
+          "lengths": [
+            7
+          ],
+          "witness_graph6": "H?AEB?c"
+        },
+        {
+          "lengths": [
+            8
+          ],
+          "witness_graph6": "H?BDA_o"
+        },
+        {
+          "lengths": [
+            9
+          ],
+          "witness_graph6": "H?bB@_W"
+        }
+      ]
+    }
+  ]
+}

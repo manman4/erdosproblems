@@ -42,6 +42,18 @@ This method differs from A in both respects that matter:
 Agreement therefore provides a useful independent check, although it is not a
 formal proof that both programs are bug-free.
 
+### C. Non-isomorphic graphs beyond seven vertices (`enumerate_nauty.py`)
+
+NetworkX's Graph Atlas stops at seven vertices. This program instead streams
+all non-isomorphic graphs produced by nauty's `geng`, decodes graph6 records
+locally, and detects cycle lengths with a minimum-rooted DFS. It is intended
+first for `n=8`, where there are 12,346 non-isomorphic graphs.
+
+The exact values through `n=10` were already reported in Alvin Dunås's 2026
+Uppsala thesis, *The number of sets of cycle lengths for graphs on n vertices*.
+This computation should therefore be described as an independent reproduction,
+not as a new table. In particular, the reference value at `n=8` is `f(8)=40`.
+
 ## Suggested commands
 
 Install the extra dependency in an isolated environment:
@@ -75,9 +87,39 @@ python experiments/problem_84/enumerate_unlabeled.py --max-n 7
 python experiments/problem_84/compare_results.py
 ```
 
+To extend the non-isomorphic enumeration to `n=8`, first install nauty. With
+Homebrew on macOS:
+
+```bash
+brew install nauty
+```
+
+Then generate `n=3,...,8`. Including the overlap is intentional: it checks the
+new generator and detector against both earlier methods through `n=7`.
+
+```bash
+/usr/bin/time -p python experiments/problem_84/enumerate_nauty.py --max-n 8
+python experiments/problem_84/verify_nauty_results.py
+```
+
+The script looks for both `geng` (Homebrew) and `nauty-geng` (common on Debian).
+An explicit path can be supplied when necessary:
+
+```bash
+python experiments/problem_84/enumerate_nauty.py \
+  --max-n 8 --geng /path/to/geng
+```
+
+Do not run `enumerate_labeled.py` with `n=8`: it would require considering
+268,435,456 labeled graphs, and that implementation deliberately refuses
+values above seven.
+
 By default the scripts write `results_labeled.json` and
 `results_unlabeled.json` in this directory. Each realized cycle set has a
 witness graph stored as an edge list.
+
+The nauty extension writes `results_nauty.json` and stores one graph6 witness
+for each realized cycle set.
 
 ## Reporting checklist
 
