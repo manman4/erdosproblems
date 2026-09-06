@@ -67,7 +67,7 @@ graphs, then recomputes both methods for `n=3,4,5`; it passed.
 
 Code and full JSON output with witnesses:
 
-- TODO: add a link to the pushed `compute-problem-84` branch or commit.
+- [Problem #84 computation at commit `9dce962c`](https://github.com/manman4/erdosproblems/tree/9dce962c9b5310099e683bcf7f7dec457c57ce67/experiments/problem_84)
 
 AI disclosure: the scripts and this report draft were written with OpenAI Codex
 assistance and executed locally by me. The values above were produced by the
