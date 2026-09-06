@@ -30,9 +30,11 @@ struct Options {
     fs::path output = "results_nauty_fast.json";
 };
 
-constexpr std::array<std::uint64_t, 11> known_graph_counts = {
+constexpr std::array<std::uint64_t, 12> known_graph_counts = {
     0, 1, 2, 4, 11, 34, 156, 1'044, 12'346, 274'668, 12'005'168,
+    1'018'997'864,
 };
+constexpr std::uint64_t progress_interval = 10'000'000;
 
 struct GengProcess {
     pid_t pid = -1;
@@ -285,6 +287,10 @@ struct Result {
             result.witnesses.emplace(mask, raw);
         }
         ++result.graph_count;
+        if (result.graph_count % progress_interval == 0) {
+            std::cerr << "n=" << n << ": processed " << result.graph_count
+                      << " graphs, current f(n)=" << result.witnesses.size() << '\n';
+        }
     }
     std::free(line);
 
@@ -391,8 +397,8 @@ void write_json(const fs::path& path, const std::string& geng,
             usage(argv[0], 2);
         }
     }
-    if (options.min_n < 1 || options.min_n > options.max_n || options.max_n > 10) {
-        throw std::runtime_error("require 1 <= min-n <= max-n <= 10");
+    if (options.min_n < 1 || options.min_n > options.max_n || options.max_n > 11) {
+        throw std::runtime_error("require 1 <= min-n <= max-n <= 11");
     }
     return options;
 }

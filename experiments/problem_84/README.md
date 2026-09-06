@@ -142,7 +142,7 @@ c++ -std=c++20 -O3 -Wall -Wextra -Wpedantic \
   -o /tmp/enumerate_nauty_fast
 
 /usr/bin/time -p /tmp/enumerate_nauty_fast \
-  --max-n 10 \
+  --max-n 11 \
   --geng /opt/homebrew/bin/geng \
   --output /tmp/results_nauty_fast.json
 
@@ -153,6 +153,14 @@ python experiments/problem_84/verify_nauty_results.py \
 On systems where `geng` is already on `PATH`, the `--geng` option can be
 omitted. The default output name is `results_nauty_fast.json` in the current
 working directory.
+
+For `n=11`, `geng` emits 1,018,997,864 non-isomorphic graphs, about 85 times
+the count for `n=10`. The program reports progress after every ten million
+graphs. To compute only the new order, use `--min-n 11 --max-n 11`; omitting
+`--min-n` also repeats the smaller orders and preserves all overlap checks.
+The verifier has no reference value for `f(11)`: it checks the complete graph
+count and every stored witness, but labels the resulting `f(11)` as having no
+reference value.
 
 ## Reporting checklist
 
