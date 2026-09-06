@@ -3,6 +3,9 @@
 This directory contains two deliberately independent computations of the small
 values associated with [Erdős problem #84](https://www.erdosproblems.com/84).
 
+An unofficial Japanese translation of the problem statement is available in
+[`PROBLEM_JA.md`](PROBLEM_JA.md).
+
 For a simple undirected graph `G` on `n` vertices, its cycle set is
 
 ```text
