@@ -123,7 +123,36 @@ def has_rainbow_cycle(n: int, k: int, edge_colors: dict[Edge, int]) -> bool:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument(
+        "--reference",
+        type=Path,
+        help="compare overlapping (n,k) values with another result file",
+    )
     return parser.parse_args()
+
+
+def result_map(payload: dict[str, Any]) -> dict[tuple[int, int], int]:
+    """Return the saved anti-Ramsey values keyed by (n, k)."""
+    values = payload.get("values")
+    if not isinstance(values, list):
+        raise ValueError("reference values must be a list")
+
+    result: dict[tuple[int, int], int] = {}
+    for value in values:
+        n = value.get("n")
+        entries = value.get("entries")
+        if not isinstance(n, int) or not isinstance(entries, list):
+            raise ValueError("invalid reference row")
+        for entry in entries:
+            k = entry.get("k")
+            anti_ramsey = entry.get("anti_ramsey")
+            if not isinstance(k, int) or not isinstance(anti_ramsey, int):
+                raise ValueError("invalid reference entry")
+            key = (n, k)
+            if key in result:
+                raise ValueError(f"duplicate reference entry: {key}")
+            result[key] = anti_ramsey
+    return result
 
 
 def main() -> None:
@@ -152,8 +181,28 @@ def main() -> None:
         if value.get("edge_count") != edge_count:
             raise SystemExit(f"n={n}: incorrect edge_count")
         expected_colorings = bell_number_from_stirling(edge_count)
-        if value.get("canonical_coloring_count") != expected_colorings:
-            raise SystemExit(f"n={n}: incorrect canonical coloring count")
+        if "canonical_coloring_count" in value:
+            if value["canonical_coloring_count"] != expected_colorings:
+                raise SystemExit(f"n={n}: incorrect canonical coloring count")
+            count_description = (
+                f"{expected_colorings} canonical colorings "
+                f"(Bell number B_{edge_count})"
+            )
+        else:
+            statistic_names = (
+                "search_nodes",
+                "terminal_colorings",
+                "pruned_subtrees",
+            )
+            for name in statistic_names:
+                statistic = value.get(name)
+                if not isinstance(statistic, int) or statistic < 0:
+                    raise SystemExit(f"n={n}: invalid or missing {name}")
+            count_description = (
+                f"pruned search statistics: nodes={value['search_nodes']}, "
+                f"terminal={value['terminal_colorings']}, "
+                f"pruned={value['pruned_subtrees']}"
+            )
 
         entries = value.get("entries")
         if not isinstance(entries, list):
@@ -185,13 +234,28 @@ def main() -> None:
                 f"witness colors={len(entry['witness_color_classes'])}"
             )
 
-        print(
-            f"verified n={n}: {expected_colorings} canonical colorings "
-            f"(Bell number B_{edge_count})"
-        )
+        print(f"verified n={n}: {count_description}")
 
     if recomputed_flattened_terms != payload.get("flattened_terms"):
         raise SystemExit("flattened_terms does not agree with the row data")
+
+    if args.reference is not None:
+        reference_payload = json.loads(args.reference.read_text(encoding="utf-8"))
+        if reference_payload.get("object") != payload.get("object"):
+            raise SystemExit("reference describes a different object")
+        current = result_map(payload)
+        reference = result_map(reference_payload)
+        overlap = sorted(set(current) & set(reference))
+        if not overlap:
+            raise SystemExit("no overlapping (n,k) values with reference")
+        for key in overlap:
+            if current[key] != reference[key]:
+                raise SystemExit(
+                    f"reference mismatch at n={key[0]}, k={key[1]}: "
+                    f"got {current[key]}, reference has {reference[key]}"
+                )
+        print(f"matched reference for {len(overlap)} overlapping (n,k) values")
+
     print(
         "ok - counts, published values, witnesses, and flattened terms agree"
     )

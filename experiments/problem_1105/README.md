@@ -166,3 +166,44 @@ python experiments/problem_1105/verify_cycles_bruteforce.py
 
 The expected initial rows are deliberately not hard-coded in the enumerator.
 They should be obtained by exhaustive search before relying on the formula.
+
+## Formula-free C cycle search
+
+`enumerate_cycles_c.c` uses restricted-growth colorings and incremental cycle
+checks.  It prunes only after a completed rainbow cycle makes a target `k`
+irrelevant, or when the number of remaining edges cannot improve the current
+best value.  The published formula is not used for searching or initialization.
+
+Compile it with warnings enabled:
+
+```bash
+cc -O3 -std=c11 -Wall -Wextra -Wpedantic \
+  experiments/problem_1105/enumerate_cycles_c.c \
+  -o /tmp/enumerate_cycles_c
+```
+
+First reproduce the Python range and compare every overlapping entry:
+
+```bash
+/usr/bin/time -p /tmp/enumerate_cycles_c --max-n 5
+
+python experiments/problem_1105/verify_cycles_bruteforce.py \
+  --input experiments/problem_1105/results_cycles_c.json \
+  --reference experiments/problem_1105/results_cycles_bruteforce.json
+```
+
+Then compute `n = 6` in a separate output file:
+
+```bash
+/usr/bin/time -p /tmp/enumerate_cycles_c \
+  --min-n 6 --max-n 6 \
+  --output experiments/problem_1105/results_cycles_c_n6.json
+
+python experiments/problem_1105/verify_cycles_bruteforce.py \
+  --input experiments/problem_1105/results_cycles_c_n6.json
+```
+
+The C search supports `n <= 7`, but `n = 7` should be attempted separately
+only after reviewing the `n = 6` search statistics.  Interrupting with Ctrl-C
+or `SIGTERM` writes no partial JSON, and an existing output file is not replaced
+unless `--force` is supplied.
