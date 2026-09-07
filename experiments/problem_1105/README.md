@@ -1,4 +1,4 @@
-# Erdős problem #1105: naive path anti-Ramsey enumeration
+# Erdős problem #1105: path and cycle anti-Ramsey enumeration
 
 This directory starts an exact computation associated with
 [Erdős problem #1105](https://www.erdosproblems.com/1105).  For
@@ -130,3 +130,39 @@ incumbent recorded by the search.
 
 The C search is still exponential.  Its `n <= 7` limit is intentional; raising
 the constant without another complexity review is not supported.
+
+## Naive cycle computation
+
+The second OEIS candidate associated with the problem is the triangular array
+
+```text
+T(n, k) = AR(n, C_k),  3 <= k <= n,
+```
+
+where `C_k` is the cycle on `k` vertices.  The published result is stated using
+the minimum number of colors that forces a rainbow cycle; this is one more than
+the maximum number of colors avoiding one used here.
+
+`enumerate_cycles_bruteforce.py` is formula-free.  It enumerates all canonical
+set partitions of `E(K_n)` and directly tests every labeled undirected cycle.
+Rotations and reversals of a cycle are removed before the search.  As with the
+naive path search, the Bell-number growth makes `n = 5` the deliberate limit.
+
+Run the exhaustive computation from the repository root:
+
+```bash
+/usr/bin/time -p python \
+  experiments/problem_1105/enumerate_cycles_bruteforce.py \
+  --max-n 5
+```
+
+Then verify the number of colorings and cycles, the stored witness colorings,
+the flattened row order, and the published formula using an independent DFS
+cycle detector:
+
+```bash
+python experiments/problem_1105/verify_cycles_bruteforce.py
+```
+
+The expected initial rows are deliberately not hard-coded in the enumerator.
+They should be obtained by exhaustive search before relying on the formula.
