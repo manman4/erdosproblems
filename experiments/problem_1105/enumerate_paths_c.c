@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <inttypes.h>
 #include <limits.h>
+#include <signal.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -21,10 +22,14 @@
  */
 
 enum {
-    MAX_N = 6,
+    MAX_N = 7,
     MAX_EDGES = MAX_N * (MAX_N - 1) / 2,
-    MAX_PATHS = 1000,
+    /* There are 6825 undirected labeled paths of orders 3,...,7 in K_7. */
+    MAX_PATHS = 7000,
 };
+
+_Static_assert(MAX_EDGES <= 32, "color masks require at most 32 edges");
+_Static_assert(MAX_PATHS <= UINT16_MAX, "path indices must fit in uint16_t");
 
 static const char *const DEFAULT_OUTPUT =
     "experiments/problem_1105/results_paths_c.json";
@@ -79,6 +84,28 @@ typedef struct {
     uint64_t progress_every;
     bool force;
 } Options;
+
+static void fail_errno(const char *operation);
+
+static volatile sig_atomic_t stop_requested = 0;
+
+static void request_stop(int signal_number)
+{
+    (void)signal_number;
+    stop_requested = 1;
+}
+
+static void install_signal_handlers(void)
+{
+    struct sigaction action;
+    memset(&action, 0, sizeof(action));
+    action.sa_handler = request_stop;
+    sigemptyset(&action.sa_mask);
+    if (sigaction(SIGINT, &action, NULL) != 0 ||
+        sigaction(SIGTERM, &action, NULL) != 0) {
+        fail_errno("sigaction");
+    }
+}
 
 static void fail(const char *message)
 {
@@ -315,6 +342,9 @@ static void print_progress(Search *search)
 static void search_colorings(Search *search, int next_edge,
                              int number_of_colors, uint32_t active)
 {
+    if (stop_requested) {
+        return;
+    }
     ++search->nodes;
     print_progress(search);
 
@@ -350,6 +380,9 @@ static void search_colorings(Search *search, int next_edge,
             }
             search_colorings(search, next_edge + 1, child_color_count,
                              child_active);
+            if (stop_requested) {
+                return;
+            }
         }
     }
 }
@@ -543,13 +576,38 @@ static void write_results_atomic(const char *path, const Result *results,
     }
 }
 
+static void check_output_before_search(const char *path, bool force)
+{
+    if (force) {
+        return;
+    }
+    errno = 0;
+    if (access(path, F_OK) == 0) {
+        fprintf(stderr,
+                "error: output already exists: %s; pass --force to replace it\n",
+                path);
+        exit(EXIT_FAILURE);
+    }
+    if (errno != ENOENT) {
+        fail_errno("checking output path");
+    }
+}
+
 int main(int argc, char **argv)
 {
     Options options = parse_options(argc, argv);
+    check_output_before_search(options.output, options.force);
+    install_signal_handlers();
+
     Result results[MAX_N - 2];
     int result_count = 0;
     for (int n = options.min_n; n <= options.max_n; ++n) {
         results[result_count++] = run_search(n, options.progress_every);
+        if (stop_requested) {
+            fprintf(stderr,
+                    "interrupted during n=%d; no result file was written\n", n);
+            return 130;
+        }
     }
     write_results_atomic(options.output, results, result_count, options.force);
 
