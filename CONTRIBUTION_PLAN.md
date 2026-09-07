@@ -1,19 +1,19 @@
 # 貢献計画・進捗メモ
 
-最終更新: 2026-09-06
+最終更新: 2026-09-07
 
 このファイルは、`teorth/erdosproblems` への貢献候補、調査結果、作業状況を継続的に記録するための個人用メモです。
 
 ## 現在の方針
 
-最初の貢献では、未解決問題そのものの証明ではなく、再現・検証しやすい小規模計算またはデータ改善を目指します。
-
-第一候補は Erdős problem #84 のサイクル集合の計算です。
+最初の貢献として、Erdős problem #84 のサイクル集合を計算し、OEISへの登録と上流データの更新を行いました。現在は上流PRのレビュー待ちです。
 
 - 上流 Issue: [#290: Computing sequence for Erdős problem #84](https://github.com/teorth/erdosproblems/issues/290)
+- 上流 PR: [#406: Link problem 84 to OEIS A399654](https://github.com/teorth/erdosproblems/pull/406)
+- OEIS: [A399654](https://oeis.org/A399654)
 - 内容: `n` 頂点グラフに現れ得るサイクル長集合の種類数 `f(n)` を計算する
 - 目標: 小さい `n` の正確な値、再現可能なコード、独立した検算方法を用意する
-- 現在の状態: `n = 3, ..., 7` を二方式で検算し、nauty方式で `n = 9` まで再現済み
+- 現在の状態: `n = 10` まで既知値を独立再現し、`n = 11` では全1,018,997,864個の非同型単純グラフを列挙して `f(11) = 247` を得た。再実行結果もSHA-256まで一致した
 
 ## 作業チェックリスト
 
@@ -21,9 +21,9 @@
 
 - [x] 上流リポジトリを `upstream` remote として追加する
 - [x] `upstream/main` を基点とする作業ブランチ `compute-problem-84` を作る
-- [ ] Python仮想環境を作る
-- [ ] `requirements.txt` の依存関係をインストールする
-- [ ] `python scripts/validate.py` が成功することを確認する
+- [x] Python仮想環境を作る
+- [x] `requirements.txt` の依存関係をインストールする
+- [x] `python scripts/validate.py` が成功することを確認する
 - [x] `python3 -m pytest -q` を実行する（3 tests passed）
 
 想定コマンド:
@@ -42,11 +42,12 @@ python -m pytest -q
 
 ### 2. Problem #84 の調査
 
-- [ ] [問題ページ](https://www.erdosproblems.com/84)の定義とコメントを読む
-- [x] 上流 Issue #290 の最新状況を再確認する（open、既存コメントなし）
+- [x] [問題ページ](https://www.erdosproblems.com/84)の定義とコメントを読む
+- [x] 上流 Issue #290 の状況を確認し、計算結果をコメントする
 - [x] Issue本文と実装で、`n`頂点グラフのサイクル長集合を数える定義が一致することを確認する
-- [ ] 既知の小さい値や関連文献を確認する
-- [ ] OEISを定義と添字の両方から検索する
+- [x] Dunåsの修士論文とNenadovの論文を確認する
+- [x] OEISを定義と添字の両方から検索する
+- [x] A399654をOEISへ登録し、`f(0), ..., f(11)` を掲載する
 
 ### 3. 計算と検証
 
@@ -59,27 +60,29 @@ python -m pytest -q
 - [x] `n = 7` で両実装の全サイクル長集合が一致することを確認する
 - [x] 実行時間、Python・ライブラリのバージョン、実行コマンドを記録する
 - [x] 得られた値と具体的な実現グラフを保存する
-- [ ] 単調性や理論上の上下限などの sanity check を行う
+- [x] 単調性、既知の上下限、既知値との一致をsanity checkとして確認する
+- [x] C++版で `n = 11` を二度完全列挙し、出力がSHA-256まで一致することを確認する
+- [x] 保存した247個のwitnessをNetworkXと構造の異なる部分集合DPで再検証する
 
 ### 4. 成果の共有
 
 - [x] AI支援を利用した範囲を報告文案に明記する
 - [x] コード、値、検算方法を上流 Issue #290 に報告する
-- [ ] 必要なら `data/problems.yaml` の更新PRを作る
+- [x] `data/problems.yaml` の更新PR #406を作る
 - [ ] 数学的な詳しい議論は erdosproblems.com の問題ページへ投稿する
 
 ## その他の候補
 
 | 優先度 | 分野 | 候補 | 状態・所感 |
 |---|---|---|---|
-| 1 | Python・グラフ | [Issue #290 / Problem #84](https://github.com/teorth/erdosproblems/issues/290) | 第一候補。範囲を限定しやすい |
+| 完了 | Python・グラフ | [Issue #290 / Problem #84](https://github.com/teorth/erdosproblems/issues/290) | A399654を登録し、PR #406を提出済み |
 | 2 | Web・データ設計 | [Issue #370: forum情報の追加](https://github.com/teorth/erdosproblems/issues/370) | スキーマ、生成処理、UIの変更候補 |
 | 3 | 最適化・MILP | [Issue #300 / Problem #425](https://github.com/teorth/erdosproblems/issues/300) | 既存計算の独立検算が必要 |
 | 4 | 計算幾何 | [Issue #298 / Problem #1086](https://github.com/teorth/erdosproblems/issues/298) | 点配置の探索が必要 |
 | 5 | SAT・Ramsey理論 | [Issue #291 / Problem #181](https://github.com/teorth/erdosproblems/issues/291) | 難度は比較的高い |
 | 6 | Lean | [Issue #392 / Problem #510](https://github.com/teorth/erdosproblems/issues/392) | 形式化経験が必要 |
 
-ローカルの `data/problems.yaml` では、OEIS欄が `possible` のみとなっている問題が266件ある。Problem #84が難しい場合は、対話表で `OEIS = possible` と得意なタグを組み合わせて次の候補を探す。
+2026-09-06時点のローカルの `data/problems.yaml` では、OEIS欄が `possible` のみとなっている問題が266件あった。次の候補を選ぶ前に最新の`upstream/main`で再集計し、対話表で `OEIS = possible` と得意なタグを組み合わせて探す。
 
 ## 貢献時の注意
 
@@ -94,11 +97,11 @@ python -m pytest -q
 
 ## 現在確認できている環境
 
-- ブランチ: `compute-problem-84`
+- ブランチ: `main`（計算成果は`compute-problem-84`、PR用変更は`codex/link-problem-84-a399654`）
 - remote: 自分のforkを指す `origin` と、本家を指す `upstream`
-- 作業ツリー: このファイルを追加する前はclean
+- 作業ツリー: このファイルの更新を除きclean
 - テスト: `python3 -m pytest -q` は成功（3 passed）
-- validation: `PyYAML` が未導入のため、`python3 scripts/validate.py` は現在実行不可
+- validation: `.venv/bin/python scripts/validate.py` は成功
 
 ## 進捗ログ
 
@@ -142,8 +145,24 @@ python -m pytest -q
 - nauty方式で274,668個の非同型9頂点グラフを列挙し、既知値`f(9)=75`を再現した。
 - `n<=9`の検証はすべて成功した。実行時間はreal 38.66秒、user 38.61秒、sys 0.16秒だった。
 
+### 2026-09-07
+
+- Pythonのnauty方式で12,005,168個の非同型10頂点グラフを列挙し、既知値`f(10)=133`を再現した。
+- 高速化のため列挙器をC++へ移植し、数学的な正しさと実装上の安全性を再確認した。
+- nauty `geng` 2.9.3が生成した全1,018,997,864個の非同型11頂点単純グラフを処理し、`f(11)=247`を得た。
+- `n=11`の完全列挙を二度実行し、247個のcycle setとgraph6 witnessを含むJSONがバイト単位で一致した。
+- 一致したJSONのSHA-256は`12adf4d7012a0e0fbd58baeb7662a23220dd73b078db8e5c0b3c39e07325a26e`。
+- 保存した全witnessをNetworkXで再計算し、構造の異なる部分集合DPでも検証した。
+- Dunåsの2026年Uppsala大学修士論文にある`n<=10`の値と一致することを確認した。
+- OEISに[A399654](https://oeis.org/A399654)が公開され、`f(0), ..., f(11) = 1, 1, 1, 2, 4, 6, 11, 21, 40, 75, 133, 247`が掲載された。
+- Issue #290に`n=11`の結果、二度の実行、ハッシュ、検証方法、コードリンク、AI利用開示を追記した。
+- `data/problems.yaml`のProblem #84について`oeis: ["possible"]`を`oeis: ["A399654"]`へ変更するPR #406を提出した。
+- PR用の差分に対して`.venv/bin/python scripts/validate.py`と`git diff --check`が成功した。
+
 ## 次にやること
 
-1. コードと`n=8,9`の結果をコミットしてpushする。
-2. `n=10`を現在のPython版で実行するか、高速版を用意するか判断する。
-3. Issue #290へ、既知文献と独立再現である旨を補足報告する。
+1. 上流PR #406のCIとレビューを待つ。
+2. 修正依頼があれば`codex/link-problem-84-a399654`で対応する。
+3. マージ後に`main`を`upstream/main`へ同期し、PR専用ブランチを削除する。
+4. Issueから計算コードへのリンクを維持するため、`compute-problem-84`ブランチは残す。
+5. 次の貢献候補を選ぶ場合は、最新のIssueと`data/problems.yaml`を改めて確認する。
