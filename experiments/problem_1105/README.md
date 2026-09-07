@@ -8,6 +8,9 @@ vertices.
 
 An unofficial Japanese translation of the problem statement is available in
 [`PROBLEM_JA.md`](PROBLEM_JA.md).
+An elementary proof of the path cases `k=3,4`, which lie outside Yuan's
+`k >= 5` theorem, is recorded in
+[`PATH_SMALL_CASES_JA.md`](PATH_SMALL_CASES_JA.md).
 
 The intended OEIS object is the triangular array
 
