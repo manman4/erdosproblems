@@ -6,6 +6,9 @@ This directory starts an exact computation associated with
 coloring of `K_n` that contains no rainbow copy of the path `P_k` on `k`
 vertices.
 
+An unofficial Japanese translation of the problem statement is available in
+[`PROBLEM_JA.md`](PROBLEM_JA.md).
+
 The intended OEIS object is the triangular array
 
 ```text
@@ -30,7 +33,7 @@ n = 5: m = 10, B_m = 115975
 n = 6: m = 15, B_m = 1382958545
 ```
 
-The script therefore deliberately refuses `n > 5`.  This is a small,
+The Python script therefore deliberately refuses `n > 5`.  This is a small,
 independent check of the definitions and initial values, not the eventual
 fast implementation.
 
@@ -90,14 +93,28 @@ First check the overlap with the Python computation:
 /usr/bin/time -p /tmp/enumerate_paths_c --max-n 5
 ```
 
-Then compute the new row separately.  A separate output avoids overwriting the
-overlap result and makes reruns easier to compare:
+Then compute rows beyond the Python limit separately.  A separate output avoids
+overwriting the overlap result and makes reruns easier to compare:
 
 ```bash
 /usr/bin/time -p /tmp/enumerate_paths_c \
   --min-n 6 --max-n 6 \
   --output experiments/problem_1105/results_paths_c_n6.json
 ```
+
+The `n=7` search is supported but may be much more expensive.  It handles 21
+edges and precomputes 6825 labeled undirected paths:
+
+```bash
+/usr/bin/time -p /tmp/enumerate_paths_c \
+  --min-n 7 --max-n 7 \
+  --output experiments/problem_1105/results_paths_c_n7.json
+```
+
+Progress is printed every ten million search nodes by default.  Use
+`--progress-every N` to change the interval.  Ctrl-C or `SIGTERM` stops the
+recursive search without writing a partial result file.  The program also
+checks for an existing output file before starting a potentially long search.
 
 The same independent witness and formula checker accepts the C output:
 
@@ -111,5 +128,5 @@ number colorings.  Every omitted subtree has either an already completed
 rainbow path for each still-relevant `k`, or an upper bound no better than the
 incumbent recorded by the search.
 
-The C search is still exponential.  Its `n <= 6` limit is intentional; raising
+The C search is still exponential.  Its `n <= 7` limit is intentional; raising
 the constant without another complexity review is not supported.
