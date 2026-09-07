@@ -1,6 +1,6 @@
 # 貢献計画・進捗メモ
 
-最終更新: 2026-09-07
+最終更新: 2026-09-08
 
 このファイルは、Erdős problemsに関連する数列のOEIS登録候補、調査結果、
 計算状況、および必要に応じた`teorth/erdosproblems`への報告を継続的に
@@ -8,7 +8,8 @@
 
 ## 現在の方針
 
-最初の貢献として、Erdős problem #84 のサイクル集合を計算し、OEISへの登録と上流データの更新を行いました。現在は上流PRのレビュー待ちです。
+Erdős problem #84 のサイクル長集合と、Problem #1105 のパス・サイクルの
+反Ramsey数をOEISへ登録しました。対応する上流データ更新PRはレビュー待ちです。
 
 - 上流 Issue: [#290: Computing sequence for Erdős problem #84](https://github.com/teorth/erdosproblems/issues/290)
 - 上流 PR: [#406: Link problem 84 to OEIS A399654](https://github.com/teorth/erdosproblems/pull/406)
@@ -16,6 +17,11 @@
 - 内容: `n` 頂点グラフに現れ得るサイクル長集合の種類数 `f(n)` を計算する
 - 目標: 小さい `n` の正確な値、再現可能なコード、独立した検算方法を用意する
 - 現在の状態: `n = 10` まで既知値を独立再現し、`n = 11` では全1,018,997,864個の非同型単純グラフを列挙して `f(11) = 247` を得た。再実行結果もSHA-256まで一致した
+
+- Problem #1105: [Erdős Problem 1105](https://www.erdosproblems.com/1105)
+- 上流 PR: [#408: Link problem 1105 to OEIS A399683 and A399687](https://github.com/teorth/erdosproblems/pull/408)
+- OEIS: [A399683](https://oeis.org/A399683)（パス）、[A399687](https://oeis.org/A399687)（サイクル）
+- 現在の状態: 論文の厳密公式から三角配列を作成し、公式を使わないPython版とC版の列挙でも小さい場合を検証した
 
 ### 今後の優先目標と候補選定方針
 
@@ -106,7 +112,7 @@ python -m pytest -q
 | 優先度 | 分野 | 候補 | 状態・所感 |
 |---|---|---|---|
 | 完了 | Python・グラフ | [Issue #290 / Problem #84](https://github.com/teorth/erdosproblems/issues/290) | A399654を登録し、PR #406を提出済み |
-| 調査中 | グラフ・反Ramsey理論 | [Problem #1105](https://www.erdosproblems.com/1105) | 人間が執筆した2005年の論文にサイクルの反Ramsey数の厳密公式がある。二変数関数から自然なOEIS数列を定義できるか、既登録列および先行作業の有無を確認する |
+| 完了 | グラフ・反Ramsey理論 | [Problem #1105](https://www.erdosproblems.com/1105) | パスをA399683、サイクルをA399687として登録し、PR #408を提出済み |
 | 2 | Web・データ設計 | [Issue #370: forum情報の追加](https://github.com/teorth/erdosproblems/issues/370) | スキーマ、生成処理、UIの変更候補 |
 | 3 | 最適化・MILP | [Issue #300 / Problem #425](https://github.com/teorth/erdosproblems/issues/300) | 既存計算の独立検算が必要 |
 | 4 | 計算幾何 | [Issue #298 / Problem #1086](https://github.com/teorth/erdosproblems/issues/298) | 点配置の探索が必要 |
@@ -150,7 +156,7 @@ python -m pytest -q
 
 ## 現在確認できている環境
 
-- ブランチ: `main`（計算成果は`compute-problem-84`、PR用変更は`codex/link-problem-84-a399654`）
+- ブランチ: `main`（計算成果は`compute-problem-84`と`compute-problem-1105`、PR用変更は`codex/link-problem-84-a399654`と`link-problem-1105-oeis`）
 - remote: 自分のforkを指す `origin` と、本家を指す `upstream`
 - 作業ツリー: このファイルの更新を除きclean
 - テスト: `python3 -m pytest -q` は成功（3 passed）
@@ -212,10 +218,19 @@ python -m pytest -q
 - `data/problems.yaml`のProblem #84について`oeis: ["possible"]`を`oeis: ["A399654"]`へ変更するPR #406を提出した。
 - PR用の差分に対して`.venv/bin/python scripts/validate.py`と`git diff --check`が成功した。
 
+### 2026-09-08
+
+- Problem #1105に対応するパスの反Ramsey数の三角配列を[A399683](https://oeis.org/A399683)として登録した。
+- Problem #1105に対応するサイクルの反Ramsey数の三角配列を[A399687](https://oeis.org/A399687)として登録した。
+- Pythonの全分割列挙と、公式を使わないCの枝刈り列挙を用いて、小さい`n`の値を相互検証した。
+- パスの小さい場合`T(n,3)=1`、`T(4,4)=3`、`T(n,4)=2`（`n >= 5`）の人間による証明を記録し、再検査した。
+- 上流に該当issueがないことを確認し、issueを新設せず、Problem #1105の`oeis`欄を更新するPR #408を提出した。
+- PR #408は最新の`upstream/main`から作った1行だけの差分で、`.venv/bin/python scripts/validate.py`が成功した。
+
 ## 次にやること
 
-1. 上流PR #406のCIとレビューを待つ。
-2. 修正依頼があれば`codex/link-problem-84-a399654`で対応する。
+1. 上流PR #406と#408のCI・レビューを待つ。
+2. 修正依頼があれば、それぞれのPR用ブランチで対応する。
 3. マージ後に`main`を`upstream/main`へ同期し、PR専用ブランチを削除する。
-4. Issueから計算コードへのリンクを維持するため、`compute-problem-84`ブランチは残す。
-5. 次の貢献候補を選ぶ場合は、最新のIssueと`data/problems.yaml`を改めて確認する。
+4. 計算記録を保持するため、`compute-problem-84`と`compute-problem-1105`は残す。
+5. 次のOEIS登録候補を選ぶ前に、最新のIssueと`data/problems.yaml`を改めて確認する。
