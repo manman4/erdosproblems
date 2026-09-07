@@ -8214,12 +8214,12 @@
 - number: "501"
   prize: "no"
   informal_status:
-    state: "open"
+    state: "independent"
     last_update: "2025-08-31"
   formal_status:
     state: "unformalized"
   status:
-    state: "open"
+    state: "independent"
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
