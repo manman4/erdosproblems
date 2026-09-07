@@ -1409,8 +1409,8 @@
     last_update: "2025-08-31"
   oeis: ["A245762"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["graph theory"]
 
 - number: "87"
@@ -1703,8 +1703,8 @@
     last_update: "2025-08-31"
   oeis: ["A003829"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["geometry"]
 
 - number: "105"
@@ -2974,8 +2974,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "182"
@@ -5291,8 +5291,8 @@
     last_update: "2025-08-31"
   oeis: ["A025456", "A025418"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["number theory", "powers"]
 
 - number: "323"
@@ -7843,8 +7843,8 @@
     last_update: "2025-08-31"
   oeis: ["A210184"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["number theory", "factorials"]
 
 - number: "479"
@@ -8992,8 +8992,8 @@
     last_update: "2026-09-03"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["graph theory"]
 
 - number: "549"
@@ -9362,8 +9362,8 @@
     last_update: "2026-09-03"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["graph theory", "turan number"]
 
 - number: "572"
@@ -9555,8 +9555,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["graph theory"]
 
 - number: "584"
@@ -11670,8 +11670,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["graph theory", "turan number"]
 
 - number: "714"
@@ -11686,8 +11686,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["graph theory", "turan number"]
 
 - number: "715"
@@ -12645,8 +12645,8 @@
     last_update: "2025-08-31"
   oeis: ["A390813"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   tags: ["number theory", "sidon sets", "squares"]
 
 - number: "774"
@@ -15838,8 +15838,8 @@
     last_update: "2025-08-31"
   oeis: ["A048669"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-07"
   comments: "Jacobsthal's function"
   tags: ["number theory"]
 
@@ -16646,8 +16646,8 @@
     state: "falsifiable"
     last_update: "2025-09-12"
   formalized:
-    state: "no"
-    last_update: "2025-09-10"
+    state: "yes"
+    last_update: "2026-09-07"
   oeis: ["N/A"]
   comments: "Erdős matching conjecture"
   tags: ["graph theory", "hypergraphs"]
@@ -17674,8 +17674,8 @@
     state: "open"
     last_update: "2025-10-17"
   formalized:
-    state: "no"
-    last_update: "2025-09-28"
+    state: "yes"
+    last_update: "2026-09-07"
   oeis: ["A186704", "possible"]
   tags: ["geometry", "distances"]
 
@@ -18909,8 +18909,8 @@
     state: "open"
     last_update: "2026-01-23"
   formalized:
-    state: "no"
-    last_update: "2026-01-23"
+    state: "yes"
+    last_update: "2026-09-07"
   oeis: ["N/A"]
   tags: ["combinatorics"]
 
@@ -19666,8 +19666,8 @@
     state: "open"
     last_update: "2026-04-04"
   formalized:
-    state: "no"
-    last_update: "2026-04-04"
+    state: "yes"
+    last_update: "2026-09-07"
   oeis: ["possible"]
   tags: ["number theory", "sidon sets"]
 
@@ -19682,8 +19682,8 @@
     state: "open"
     last_update: "2026-04-04"
   formalized:
-    state: "no"
-    last_update: "2026-04-04"
+    state: "yes"
+    last_update: "2026-09-07"
   oeis: ["possible"]
   tags: ["geometry", "distances"]
 
