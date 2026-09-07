@@ -19,7 +19,7 @@
 `C_k` を `k` 頂点のサイクルとする。次は正しいか。
 
 $$
-\operatorname{AR}(n,C_k)
+\mathrm{AR}(n,C_k)
 =
 \left(\frac{k-2}{2}+\frac{1}{k-1}\right)n+O(1).
 $$
@@ -33,7 +33,7 @@ $$
 とおく。`n \geq k \geq 5` のとき、次の等式は正しいか。
 
 $$
-\operatorname{AR}(n,P_k)
+\mathrm{AR}(n,P_k)
 =
 \max\left\{
 \binom{k-2}{2}+1,
@@ -76,7 +76,7 @@ Simonovits、Sósによって提示された、関連する二つの反Ramsey問
 このディレクトリでは、OEISの候補としてパスの三角配列
 
 $$
-T(n,k)=\operatorname{AR}(n,P_k),\qquad 3\leq k\leq n,
+T(n,k)=\mathrm{AR}(n,P_k), \quad 3\leq k\leq n,
 $$
 
 を行ごとに読む。論文の公式が対象とする `k \geq 5` だけでなく、自然な
