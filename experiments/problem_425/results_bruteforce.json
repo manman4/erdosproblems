@@ -1,0 +1,320 @@
+{
+  "problem": 425,
+  "method": "all subsets by bit mask; direct duplicate-product test",
+  "values": [
+    {
+      "n": 1,
+      "subset_count": 2,
+      "tested_subsets": 1,
+      "F_n": 1,
+      "witness": [
+        1
+      ]
+    },
+    {
+      "n": 2,
+      "subset_count": 4,
+      "tested_subsets": 2,
+      "F_n": 2,
+      "witness": [
+        1,
+        2
+      ]
+    },
+    {
+      "n": 3,
+      "subset_count": 8,
+      "tested_subsets": 3,
+      "F_n": 3,
+      "witness": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "n": 4,
+      "subset_count": 16,
+      "tested_subsets": 4,
+      "F_n": 4,
+      "witness": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "n": 5,
+      "subset_count": 32,
+      "tested_subsets": 5,
+      "F_n": 5,
+      "witness": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "n": 6,
+      "subset_count": 64,
+      "tested_subsets": 6,
+      "F_n": 5,
+      "witness": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "n": 7,
+      "subset_count": 128,
+      "tested_subsets": 8,
+      "F_n": 6,
+      "witness": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ]
+    },
+    {
+      "n": 8,
+      "subset_count": 256,
+      "tested_subsets": 16,
+      "F_n": 6,
+      "witness": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ]
+    },
+    {
+      "n": 9,
+      "subset_count": 512,
+      "tested_subsets": 27,
+      "F_n": 7,
+      "witness": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9
+      ]
+    },
+    {
+      "n": 10,
+      "subset_count": 1024,
+      "tested_subsets": 73,
+      "F_n": 7,
+      "witness": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9
+      ]
+    },
+    {
+      "n": 11,
+      "subset_count": 2048,
+      "tested_subsets": 139,
+      "F_n": 8,
+      "witness": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        11
+      ]
+    },
+    {
+      "n": 12,
+      "subset_count": 4096,
+      "tested_subsets": 357,
+      "F_n": 9,
+      "witness": [
+        1,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "n": 13,
+      "subset_count": 8192,
+      "tested_subsets": 642,
+      "F_n": 10,
+      "witness": [
+        1,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "n": 14,
+      "subset_count": 16384,
+      "tested_subsets": 1020,
+      "F_n": 10,
+      "witness": [
+        1,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "n": 15,
+      "subset_count": 32768,
+      "tested_subsets": 2491,
+      "F_n": 10,
+      "witness": [
+        1,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "n": 16,
+      "subset_count": 65536,
+      "tested_subsets": 5732,
+      "F_n": 11,
+      "witness": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+        16
+      ]
+    },
+    {
+      "n": 17,
+      "subset_count": 131072,
+      "tested_subsets": 10914,
+      "F_n": 12,
+      "witness": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "n": 18,
+      "subset_count": 262144,
+      "tested_subsets": 20316,
+      "F_n": 12,
+      "witness": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "n": 19,
+      "subset_count": 524288,
+      "tested_subsets": 37417,
+      "F_n": 13,
+      "witness": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+        16,
+        17,
+        19
+      ]
+    },
+    {
+      "n": 20,
+      "subset_count": 1048576,
+      "tested_subsets": 81213,
+      "F_n": 13,
+      "witness": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+        16,
+        17,
+        19
+      ]
+    }
+  ]
+}
