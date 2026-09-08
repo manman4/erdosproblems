@@ -34,7 +34,7 @@ Neither Yuan's formula nor the repository's enumeration results are assumed.
 
 ## Reproducible build
 
-Enter this `A399683Lean` directory, then run:
+Enter this `lean` directory, then run:
 
 ```sh
 lake update

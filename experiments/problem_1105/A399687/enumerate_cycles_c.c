@@ -33,7 +33,7 @@ _Static_assert(MAX_CYCLES <= UINT16_MAX,
                "cycle indices must fit in uint16_t");
 
 static const char *const DEFAULT_OUTPUT =
-    "experiments/problem_1105/A399687/results_cycles_c.json";
+    "results_cycles_c.json";
 
 typedef struct {
     uint8_t u;
