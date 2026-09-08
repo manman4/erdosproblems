@@ -26,7 +26,8 @@ problemsとOEISに関する個人用の研究辞書として使用する。上�
 ## 現在の方針
 
 Erdős problem #84 のサイクル長集合と、Problem #1105 のパス・サイクルの
-反Ramsey数をOEISへ登録しました。対応する上流データ更新PRはレビュー待ちです。
+反Ramsey数をOEISへ登録しました。対応する上流データ更新PRは、2026-09-08
+現在、いずれもopenでレビュー待ちです。
 
 - 上流 Issue: [#290: Computing sequence for Erdős problem #84](https://github.com/teorth/erdosproblems/issues/290)
 - 上流 PR: [#406: Link problem 84 to OEIS A399654](https://github.com/teorth/erdosproblems/pull/406)
@@ -38,7 +39,7 @@ Erdős problem #84 のサイクル長集合と、Problem #1105 のパス・サ�
 - Problem #1105: [Erdős Problem 1105](https://www.erdosproblems.com/1105)
 - 上流 PR: [#408: Link problem 1105 to OEIS A399683 and A399687](https://github.com/teorth/erdosproblems/pull/408)
 - OEIS: [A399683](https://oeis.org/A399683)（パス）、[A399687](https://oeis.org/A399687)（サイクル）
-- 現在の状態: 論文の厳密公式から三角配列を作成し、公式を使わないPython版とC版の列挙でも小さい場合を検証した
+- 現在の状態: 論文の厳密公式から三角配列を作成し、公式を使わないPython版とC版の列挙でも小さい場合を検証した。資料は`experiments/problem_1105/A399683`と`experiments/problem_1105/A399687`に分け、A399683の`k=3,4`についてはLean 4による形式化も保存した
 
 ### 今後の優先目標と候補選定方針
 
@@ -63,10 +64,10 @@ AIのみを出典とする値は、複数のAI支援実装が一致していて�
 投稿者自身が理解、検証し、責任を持てるものにする。上流リポジトリへ
 共有する場合は、同リポジトリのより厳しい`CONTRIBUTING.md`にも従う。
 
-Problem #425の計算は探索的な再現として`compute-problem-425`ブランチに
-保存する。ただし、既知の有限表がAI working reportを中心としているため、
-現時点ではOEIS投稿や上流PRを進めず、人間による一次資料に既知項がある
-別の候補を優先する。
+Problem #425の計算は探索的な再現として`experiments/problem_425`に保存し、
+個人用`main`にも取り込んだ。ただし、既知の有限表がAI working reportを
+中心としているため、現時点ではOEIS投稿や上流PRを進めず、人間による
+一次資料に既知項がある別の候補を優先する。
 
 ## 作業チェックリスト
 
@@ -147,7 +148,7 @@ python -m pytest -q
 
 | Problem | 判断 | 理由・再検討条件 |
 |---|---|---|
-| [#425](https://www.erdosproblems.com/425) | 当面見送り | 有限表の主要な公開出典がAI working reportであり、ローカル計算もAI支援を含む。人間による独立した有限表または再実装が得られれば再検討する。探索結果は`compute-problem-425`に保存した。 |
+| [#425](https://www.erdosproblems.com/425) | 当面見送り | 有限表の主要な公開出典がAI working reportであり、ローカル計算もAI支援を含む。人間による独立した有限表または再実装が得られれば再検討する。探索結果は`experiments/problem_425`に保存し、個人用`main`へ取り込んだ。 |
 | [#272](https://www.erdosproblems.com/272) | 競合回避 | Zhanfu Yangの[2026年プレプリント](https://arxiv.org/abs/2607.23004)が`t(3), ..., t(12)`を厳密計算しているが、Claude支援を明記し、著者自身がOEISへ投稿予定と述べている。投稿状況が長期間変わらない場合のみ、著者への確認後に再検討する。 |
 | [#1005](https://www.erdosproblems.com/1005) | 対象外 | 関連数列は既に[OEIS A386893](https://oeis.org/A386893)として登録されている。 |
 | [#82](https://www.erdosproblems.com/82) | 対象外 | 関連する「`n`頂点グラフの最大正則誘導部分グラフの大きさの最小値」の数列は、既に[OEIS A390257](https://oeis.org/A390257)として登録されている。 |
@@ -173,9 +174,10 @@ python -m pytest -q
 
 ## 現在確認できている環境
 
-- ブランチ: `main`（計算成果は`compute-problem-84`と`compute-problem-1105`、PR用変更は`codex/link-problem-84-a399654`と`link-problem-1105-oeis`）
+- 個人用`main`: Problem #84、#425、#1105の計算・検証資料を取り込み済み
+- 計算用ブランチ: `compute-problem-84`、`compute-problem-425`、`compute-problem-1105`を履歴として保持
+- PR用ブランチ: `codex/link-problem-84-a399654`、`link-problem-1105-oeis`
 - remote: 自分のforkを指す `origin` と、本家を指す `upstream`
-- 作業ツリー: このファイルの更新を除きclean
 - テスト: `python3 -m pytest -q` は成功（3 passed）
 - validation: `.venv/bin/python scripts/validate.py` は成功
 
@@ -241,13 +243,17 @@ python -m pytest -q
 - Problem #1105に対応するサイクルの反Ramsey数の三角配列を[A399687](https://oeis.org/A399687)として登録した。
 - Pythonの全分割列挙と、公式を使わないCの枝刈り列挙を用いて、小さい`n`の値を相互検証した。
 - パスの小さい場合`T(n,3)=1`、`T(4,4)=3`、`T(n,4)=2`（`n >= 5`）の人間による証明を記録し、再検査した。
+- パスの小さい場合`k=3,4`をLean 4で形式化し、`lake build`と公理監査が成功した。
+- Problem #1105の資料をA399683（パス）とA399687（サイクル）のディレクトリに分け、各ディレクトリをカレントディレクトリとしてPython・Cの計算と検証を実行できるようにした。
+- Problem #425と#1105の計算・検証資料を、個人用研究辞書として`main`へマージした。
 - 上流に該当issueがないことを確認し、issueを新設せず、Problem #1105の`oeis`欄を更新するPR #408を提出した。
 - PR #408は最新の`upstream/main`から作った1行だけの差分で、`.venv/bin/python scripts/validate.py`が成功した。
 
 ## 次にやること
 
-1. 上流PR #406と#408のCI・レビューを待つ。
+1. openの上流PR #406と#408のCI・レビューを待つ。
 2. 修正依頼があれば、それぞれのPR用ブランチで対応する。
-3. マージ後に`main`を`upstream/main`へ同期し、PR専用ブランチを削除する。
-4. 計算記録を保持するため、`compute-problem-84`と`compute-problem-1105`は残す。
-5. 次のOEIS登録候補を選ぶ前に、最新のIssueと`data/problems.yaml`を改めて確認する。
+3. マージ後に`upstream/main`を個人用`main`へ取り込み、個人用資料を保持したまま同期する。不要になったPR専用ブランチは削除してよい。
+4. 計算記録と作業履歴を保持するため、各`compute-problem-N`ブランチは当面残す。
+5. Problem #425は人間による一次資料または独立再実装が得られるまでOEIS投稿を進めない。
+6. 次のOEIS登録候補を選ぶ前に、最新のIssueと`data/problems.yaml`を改めて確認する。
