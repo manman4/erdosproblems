@@ -81,7 +81,7 @@ T(n, k) = AR(n, C_k),  3 <= k <= n.
 サイクルの厳密公式は `n >= k >= 3` の全範囲を扱う。
 
 パスの `k=3,4` の値については、
-[`PATH_SMALL_CASES_JA.md`](PATH_SMALL_CASES_JA.md) に初等的な証明を記録して
+[`A399683/PATH_SMALL_CASES_JA.md`](A399683/PATH_SMALL_CASES_JA.md) に初等的な証明を記録して
 いる。
 
 計算プログラムは、論文の公式を探索に使用せず、辺彩色を直接調べて小さい

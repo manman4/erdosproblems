@@ -32,7 +32,7 @@ _Static_assert(MAX_EDGES <= 32, "color masks require at most 32 edges");
 _Static_assert(MAX_PATHS <= UINT16_MAX, "path indices must fit in uint16_t");
 
 static const char *const DEFAULT_OUTPUT =
-    "experiments/problem_1105/results_paths_c.json";
+    "experiments/problem_1105/A399683/results_paths_c.json";
 
 typedef struct {
     uint8_t u;
