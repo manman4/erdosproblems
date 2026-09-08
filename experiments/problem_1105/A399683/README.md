@@ -39,25 +39,32 @@ The Python script therefore deliberately refuses `n > 5`.  This is a small,
 independent check of the definitions and initial values, not the eventual
 fast implementation.
 
-Run the computation from the repository root:
+From the repository root, first enter this sequence directory:
 
 ```bash
-/usr/bin/time -p python \
-  experiments/problem_1105/A399683/enumerate_paths_bruteforce.py \
-  --max-n 5
+cd experiments/problem_1105/A399683
 ```
 
-The default output is
-`experiments/problem_1105/A399683/results_paths_bruteforce.json`.  It
+Run the computation there.  Use a separate rerun file so that the stored
+reference result is not overwritten:
+
+```bash
+/usr/bin/time -p python enumerate_paths_bruteforce.py \
+  --max-n 5 \
+  --output results_paths_bruteforce_rerun.json
+```
+
+The default output is `results_paths_bruteforce.json` in this directory.  It
 includes the flattened triangle and one witness coloring for each pair
-`(n, k)`.  Existing output is not replaced unless `--force` is supplied;
-use a different `--output` filename for a reproducibility rerun.
+`(n, k)`.  Existing output is not replaced unless `--force` is supplied; use
+a different `--output` filename for a reproducibility rerun.
 
 Verify the saved counts, formula values, flattened ordering, and witnesses
 with a separate rainbow-path detector:
 
 ```bash
-python experiments/problem_1105/A399683/verify_paths_bruteforce.py
+python verify_paths_bruteforce.py \
+  --input results_paths_bruteforce_rerun.json
 ```
 
 The verifier does not import the enumerator.  It computes Bell numbers from
@@ -84,14 +91,19 @@ repository:
 
 ```bash
 cc -O3 -std=c11 -Wall -Wextra -Wpedantic \
-  experiments/problem_1105/A399683/enumerate_paths_c.c \
+  enumerate_paths_c.c \
   -o /tmp/enumerate_paths_c
 ```
 
-First check the overlap with the Python computation:
+First check the overlap with the Python computation, again writing a separate
+rerun file:
 
 ```bash
-/usr/bin/time -p /tmp/enumerate_paths_c --max-n 5
+/usr/bin/time -p /tmp/enumerate_paths_c \
+  --max-n 5 \
+  --output results_paths_c_rerun.json
+
+python verify_paths_bruteforce.py --input results_paths_c_rerun.json
 ```
 
 Then compute rows beyond the Python limit separately:
@@ -99,11 +111,11 @@ Then compute rows beyond the Python limit separately:
 ```bash
 /usr/bin/time -p /tmp/enumerate_paths_c \
   --min-n 6 --max-n 6 \
-  --output experiments/problem_1105/A399683/results_paths_c_n6.json
+  --output results_paths_c_n6_rerun.json
 
 /usr/bin/time -p /tmp/enumerate_paths_c \
   --min-n 7 --max-n 7 \
-  --output experiments/problem_1105/A399683/results_paths_c_n7.json
+  --output results_paths_c_n7_rerun.json
 ```
 
 Progress is printed every ten million search nodes by default.  Use
@@ -111,11 +123,11 @@ Progress is printed every ten million search nodes by default.  Use
 the recursive search without writing a partial result file.  The program also
 checks for an existing output file before starting a potentially long search.
 
-The same independent witness and formula checker accepts the C output:
+The same independent witness and formula checker also accepts a stored C
+output directly:
 
 ```bash
-python experiments/problem_1105/A399683/verify_paths_bruteforce.py \
-  --input experiments/problem_1105/A399683/results_paths_c.json
+python verify_paths_bruteforce.py --input results_paths_c.json
 ```
 
 Here `terminal_colorings` counts only leaves reached after pruning, not all

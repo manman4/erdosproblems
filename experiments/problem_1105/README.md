@@ -16,4 +16,5 @@ in increasing `n`, then increasing `k`.
 The shared, unofficial Japanese translation of the problem statement is in
 [`PROBLEM_JA.md`](PROBLEM_JA.md).  Sequence-specific programs, results,
 proofs, and reproduction instructions are contained in the corresponding
-OEIS-numbered directory.
+OEIS-numbered directory.  Commands in each sequence README are run with that
+sequence directory as the current working directory.

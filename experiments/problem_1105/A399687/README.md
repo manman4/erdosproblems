@@ -28,12 +28,19 @@ undirected cycle.  Rotations and reversals of a cycle are removed before the
 search.  As with the naive path search, the Bell-number growth makes `n = 5`
 the deliberate limit.
 
-Run the exhaustive computation from the repository root:
+From the repository root, first enter this sequence directory:
 
 ```bash
-/usr/bin/time -p python \
-  experiments/problem_1105/A399687/enumerate_cycles_bruteforce.py \
-  --max-n 5
+cd experiments/problem_1105/A399687
+```
+
+Run the exhaustive computation there.  Use a separate rerun file so that the
+stored reference result is not overwritten:
+
+```bash
+/usr/bin/time -p python enumerate_cycles_bruteforce.py \
+  --max-n 5 \
+  --output results_cycles_bruteforce_rerun.json
 ```
 
 Then verify the number of colorings and cycles, the stored witness colorings,
@@ -41,7 +48,8 @@ the flattened row order, and the published formula using an independent DFS
 cycle detector:
 
 ```bash
-python experiments/problem_1105/A399687/verify_cycles_bruteforce.py
+python verify_cycles_bruteforce.py \
+  --input results_cycles_bruteforce_rerun.json
 ```
 
 The expected initial rows are deliberately not hard-coded in the enumerator.
@@ -59,18 +67,21 @@ Compile it with warnings enabled:
 
 ```bash
 cc -O3 -std=c11 -Wall -Wextra -Wpedantic \
-  experiments/problem_1105/A399687/enumerate_cycles_c.c \
+  enumerate_cycles_c.c \
   -o /tmp/enumerate_cycles_c
 ```
 
-First reproduce the Python range and compare every overlapping entry:
+First reproduce the Python range and compare every overlapping entry, writing
+a separate rerun file:
 
 ```bash
-/usr/bin/time -p /tmp/enumerate_cycles_c --max-n 5
+/usr/bin/time -p /tmp/enumerate_cycles_c \
+  --max-n 5 \
+  --output results_cycles_c_rerun.json
 
-python experiments/problem_1105/A399687/verify_cycles_bruteforce.py \
-  --input experiments/problem_1105/A399687/results_cycles_c.json \
-  --reference experiments/problem_1105/A399687/results_cycles_bruteforce.json
+python verify_cycles_bruteforce.py \
+  --input results_cycles_c_rerun.json \
+  --reference results_cycles_bruteforce.json
 ```
 
 Then compute `n = 6` and `n = 7` in separate output files:
@@ -78,14 +89,13 @@ Then compute `n = 6` and `n = 7` in separate output files:
 ```bash
 /usr/bin/time -p /tmp/enumerate_cycles_c \
   --min-n 6 --max-n 6 \
-  --output experiments/problem_1105/A399687/results_cycles_c_n6.json
+  --output results_cycles_c_n6_rerun.json
 
-python experiments/problem_1105/A399687/verify_cycles_bruteforce.py \
-  --input experiments/problem_1105/A399687/results_cycles_c_n6.json
+python verify_cycles_bruteforce.py --input results_cycles_c_n6_rerun.json
 
 /usr/bin/time -p /tmp/enumerate_cycles_c \
   --min-n 7 --max-n 7 \
-  --output experiments/problem_1105/A399687/results_cycles_c_n7.json
+  --output results_cycles_c_n7_rerun.json
 ```
 
 The C search supports `n <= 7`.  Interrupting with Ctrl-C or `SIGTERM`
