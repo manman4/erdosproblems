@@ -11,6 +11,8 @@ An unofficial Japanese translation of the problem statement is available in
 An elementary proof of the path cases `k=3,4`, which lie outside Yuan's
 `k >= 5` theorem, is recorded in
 [`PATH_SMALL_CASES_JA.md`](PATH_SMALL_CASES_JA.md).
+Its Lean 4 formalization is in
+[`A399683Lean/`](A399683Lean/).
 
 The intended OEIS object is the triangular array
 
