@@ -937,8 +937,8 @@
     last_update: "2026-08-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "chromatic number", "cycles"]
 
 - number: "58"
@@ -953,8 +953,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "chromatic number", "cycles"]
 
 - number: "59"
@@ -1035,8 +1035,8 @@
     last_update: "2026-08-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "chromatic number", "cycles"]
 
 - number: "64"
@@ -1067,8 +1067,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "cycles"]
 
 - number: "66"
@@ -1198,8 +1198,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory"]
 
 - number: "74"
@@ -1263,8 +1263,8 @@
     last_update: "2025-08-31"
   oeis: ["A059442"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "78"
@@ -1295,8 +1295,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "80"
@@ -1425,8 +1425,8 @@
     last_update: "2025-08-31"
   oeis: ["A059442", "possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "88"
@@ -2612,8 +2612,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "160"
@@ -2676,8 +2676,8 @@
     last_update: "2025-09-13"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   comments: "Burr-Erdős conjecture"
   tags: ["graph theory", "ramsey theory"]
 
@@ -2726,8 +2726,8 @@
     last_update: "2025-08-31"
   oeis: ["A059442"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "167"
@@ -8927,8 +8927,8 @@
     last_update: "2025-08-31"
   oeis: ["A000791"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "545"
@@ -8943,8 +8943,8 @@
     last_update: "2025-12-02"
   oeis: ["A059442", "possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "546"
@@ -8959,8 +8959,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "547"
@@ -8975,8 +8975,8 @@
     last_update: "2025-09-11"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "548"
@@ -9008,8 +9008,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "550"
@@ -9024,8 +9024,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "551"
@@ -9040,8 +9040,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "552"
@@ -9056,8 +9056,8 @@
     last_update: "2025-08-31"
   oeis: ["A006672"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "553"
@@ -9233,8 +9233,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory", "hypergraphs"]
 
 - number: "564"
@@ -9313,8 +9313,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "569"
@@ -9329,8 +9329,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "570"
@@ -9345,8 +9345,8 @@
     last_update: "2026-01-16"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "571"
@@ -9378,8 +9378,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "turan number", "cycles"]
 
 - number: "573"
@@ -9978,8 +9978,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "610"
@@ -13083,8 +13083,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "801"
@@ -14426,8 +14426,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["number theory", "graph theory"]
 
 - number: "884"
@@ -15044,8 +15044,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "chromatic number", "cycles"]
 
 - number: "922"
@@ -16096,8 +16096,8 @@
     last_update: "2026-06-21"
   oeis: ["A000791", "A059442"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-09"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "987"
@@ -16795,8 +16795,8 @@
     state: "open"
     last_update: "2025-09-13"
   formalized:
-    state: "no"
-    last_update: "2025-09-10"
+    state: "yes"
+    last_update: "2026-09-09"
   oeis: ["A059442"]
   tags: ["graph theory", "ramsey theory"]
 
@@ -16811,8 +16811,8 @@
     state: "open"
     last_update: "2025-09-13"
   formalized:
-    state: "no"
-    last_update: "2025-09-10"
+    state: "yes"
+    last_update: "2026-09-09"
   oeis: ["A000791", "A059442"]
   tags: ["graph theory", "ramsey theory"]
 
