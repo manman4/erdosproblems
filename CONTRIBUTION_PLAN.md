@@ -1,6 +1,6 @@
 # 貢献計画・進捗メモ
 
-最終更新: 2026-09-08
+最終更新: 2026-09-10
 
 このファイルは、Erdős problemsに関連する数列のOEIS登録候補、調査結果、
 計算状況、および必要に応じた`teorth/erdosproblems`への報告を継続的に
@@ -26,8 +26,8 @@ problemsとOEISに関する個人用の研究辞書として使用する。上�
 ## 現在の方針
 
 Erdős problem #84 のサイクル長集合と、Problem #1105 のパス・サイクルの
-反Ramsey数をOEISへ登録しました。対応する上流データ更新PRは、2026-09-08
-現在、いずれもopenでレビュー待ちです。
+反Ramsey数をOEISへ登録しました。対応する上流データ更新PRは、2026-09-10
+現在、いずれもopenです。レビュー、コメント、CI結果はまだありません。
 
 - 上流 Issue: [#290: Computing sequence for Erdős problem #84](https://github.com/teorth/erdosproblems/issues/290)
 - 上流 PR: [#406: Link problem 84 to OEIS A399654](https://github.com/teorth/erdosproblems/pull/406)
@@ -248,6 +248,13 @@ python -m pytest -q
 - Problem #425と#1105の計算・検証資料を、個人用研究辞書として`main`へマージした。
 - 上流に該当issueがないことを確認し、issueを新設せず、Problem #1105の`oeis`欄を更新するPR #408を提出した。
 - PR #408は最新の`upstream/main`から作った1行だけの差分で、`.venv/bin/python scripts/validate.py`が成功した。
+
+### 2026-09-10
+
+- 上流PR #406はopenのままで、レビュー、コメント、CI結果はまだないことを確認した。
+- 上流PR #408もopenのままで、レビュー、コメント、CI結果はまだないことを確認した。
+- Issue #290はopenのままで、自分が投稿した3件の計算報告以外に新しいコメントはないことを確認した。
+- A399654、A399683、A399687のOEIS登録と、対応する上流PRの提出まで完了しているため、現在はPRのレビュー待ちとする。
 
 ## 次にやること
 
