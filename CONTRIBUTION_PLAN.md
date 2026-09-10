@@ -25,9 +25,10 @@ problemsとOEISに関する個人用の研究辞書として使用する。上�
 
 ## 現在の方針
 
-Erdős problem #84 のサイクル長集合と、Problem #1105 のパス・サイクルの
-反Ramsey数をOEISへ登録しました。対応する上流データ更新PRは、2026-09-10
-現在、いずれもopenです。レビュー、コメント、CI結果はまだありません。
+Erdős problem #84 のサイクル長集合、Problem #1105 のパス・サイクルの
+反Ramsey数、およびProblem #896 の一意な積表現の最大個数をOEISへ登録しました。
+対応する上流データ更新PRは、2026-09-10現在、いずれもopenです。
+レビュー、コメント、CI結果はまだありません。
 
 - 上流 Issue: [#290: Computing sequence for Erdős problem #84](https://github.com/teorth/erdosproblems/issues/290)
 - 上流 PR: [#406: Link problem 84 to OEIS A399654](https://github.com/teorth/erdosproblems/pull/406)
@@ -40,6 +41,12 @@ Erdős problem #84 のサイクル長集合と、Problem #1105 のパス・サ�
 - 上流 PR: [#408: Link problem 1105 to OEIS A399683 and A399687](https://github.com/teorth/erdosproblems/pull/408)
 - OEIS: [A399683](https://oeis.org/A399683)（パス）、[A399687](https://oeis.org/A399687)（サイクル）
 - 現在の状態: 論文の厳密公式から三角配列を作成し、公式を使わないPython版とC版の列挙でも小さい場合を検証した。資料は`experiments/problem_1105/A399683`と`experiments/problem_1105/A399687`に分け、A399683の`k=3,4`についてはLean 4による形式化も保存した
+
+- Problem #896: [Erdős Problem 896](https://www.erdosproblems.com/896)
+- 上流 PR: [#412: Link problem 896 to OEIS A399711](https://github.com/teorth/erdosproblems/pull/412)
+- OEIS: [A399711](https://oeis.org/A399711)
+- 内容: `S,T` を `{1,...,n}` の部分集合としたとき、`m = s*t` が `S × T` 内でちょうど1通りに表される正整数 `m` の個数の最大値
+- 現在の状態: A399711を登録し、Problem #896の`oeis`欄の`possible`を`A399711`に置き換える1行差分のPR #412を提出した
 
 ### 今後の優先目標と候補選定方針
 
@@ -131,6 +138,7 @@ python -m pytest -q
 |---|---|---|---|
 | 完了 | Python・グラフ | [Issue #290 / Problem #84](https://github.com/teorth/erdosproblems/issues/290) | A399654を登録し、PR #406を提出済み |
 | 完了 | グラフ・反Ramsey理論 | [Problem #1105](https://www.erdosproblems.com/1105) | パスをA399683、サイクルをA399687として登録し、PR #408を提出済み |
+| 完了 | 数論・積表現 | [Problem #896](https://www.erdosproblems.com/896) | A399711を登録し、PR #412を提出済み |
 | 2 | Web・データ設計 | [Issue #370: forum情報の追加](https://github.com/teorth/erdosproblems/issues/370) | スキーマ、生成処理、UIの変更候補 |
 | 3 | 最適化・MILP | [Issue #300 / Problem #425](https://github.com/teorth/erdosproblems/issues/300) | 既存計算の独立検算が必要 |
 | 4 | 計算幾何 | [Issue #298 / Problem #1086](https://github.com/teorth/erdosproblems/issues/298) | 点配置の探索が必要 |
@@ -176,7 +184,7 @@ python -m pytest -q
 
 - 個人用`main`: Problem #84、#425、#1105の計算・検証資料を取り込み済み
 - 計算用ブランチ: `compute-problem-84`、`compute-problem-425`、`compute-problem-1105`を履歴として保持
-- PR用ブランチ: `codex/link-problem-84-a399654`、`link-problem-1105-oeis`
+- PR用ブランチ: `codex/link-problem-84-a399654`、`link-problem-1105-oeis`、`codex/link-problem-896-a399711`
 - remote: 自分のforkを指す `origin` と、本家を指す `upstream`
 - テスト: `python3 -m pytest -q` は成功（3 passed）
 - validation: `.venv/bin/python scripts/validate.py` は成功
@@ -253,12 +261,15 @@ python -m pytest -q
 
 - 上流PR #406はopenのままで、レビュー、コメント、CI結果はまだないことを確認した。
 - 上流PR #408もopenのままで、レビュー、コメント、CI結果はまだないことを確認した。
+- Problem #896に対応する一意な積表現の最大個数を[A399711](https://oeis.org/A399711)として登録した。
+- Problem #896の`oeis`欄をA399711へ更新する上流PR #412を、9月10日0時37分（日本時間）に提出した。
+- 上流PR #412はopenで、レビュー、コメント、CI結果はまだないことを確認した。
 - Issue #290はopenのままで、自分が投稿した3件の計算報告以外に新しいコメントはないことを確認した。
-- A399654、A399683、A399687のOEIS登録と、対応する上流PRの提出まで完了しているため、現在はPRのレビュー待ちとする。
+- A399654、A399683、A399687、A399711のOEIS登録と、対応する上流PRの提出まで完了しているため、現在はPRのレビュー待ちとする。
 
 ## 次にやること
 
-1. openの上流PR #406と#408のCI・レビューを待つ。
+1. openの上流PR #406、#408、#412のCI・レビューを待つ。
 2. 修正依頼があれば、それぞれのPR用ブランチで対応する。
 3. マージ後に`upstream/main`を個人用`main`へ取り込み、個人用資料を保持したまま同期する。不要になったPR専用ブランチは削除してよい。
 4. 計算記録と作業履歴を保持するため、各`compute-problem-N`ブランチは当面残す。
