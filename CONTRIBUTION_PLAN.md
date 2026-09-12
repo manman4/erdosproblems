@@ -1,6 +1,6 @@
 # 貢献計画・進捗メモ
 
-最終更新: 2026-09-10
+最終更新: 2026-09-12
 
 このファイルは、Erdős problemsに関連する数列のOEIS登録候補、調査結果、
 計算状況、および必要に応じた`teorth/erdosproblems`への報告を継続的に
@@ -26,8 +26,9 @@ problemsとOEISに関する個人用の研究辞書として使用する。上�
 ## 現在の方針
 
 Erdős problem #84 のサイクル長集合、Problem #1105 のパス・サイクルの
-反Ramsey数、およびProblem #896 の一意な積表現の最大個数をOEISへ登録しました。
-対応する上流データ更新PRは、2026-09-10現在、いずれもopenです。
+反Ramsey数、Problem #896 の一意な積表現の最大個数、およびProblem #793 の
+strongly 2-primitive集合の最大濃度をOEISへ登録しました。
+対応する上流データ更新PRは、2026-09-12現在、いずれもopenです。
 レビュー、コメント、CI結果はまだありません。
 
 - 上流 Issue: [#290: Computing sequence for Erdős problem #84](https://github.com/teorth/erdosproblems/issues/290)
@@ -47,6 +48,18 @@ Erdős problem #84 のサイクル長集合、Problem #1105 のパス・サイ�
 - OEIS: [A399711](https://oeis.org/A399711)
 - 内容: `S,T` を `{1,...,n}` の部分集合としたとき、`m = s*t` が `S × T` 内でちょうど1通りに表される正整数 `m` の個数の最大値
 - 現在の状態: A399711を登録し、Problem #896の`oeis`欄の`possible`を`A399711`に置き換える1行差分のPR #412を提出した
+
+- Problem #793: [Erdős Problem 793](https://www.erdosproblems.com/793)
+- 上流 PR: [#415: Link problem 793 to OEIS A399779](https://github.com/teorth/erdosproblems/pull/415)
+- OEIS: [A399779](https://oeis.org/A399779)
+- 内容: `A`を`{1,...,n}`の部分集合とし、`a,b,c`が`A`に属し
+  `a != b`, `a != c`ならば`a`が`b*c`を割らないという条件のもとでの
+  `|A|`の最大値
+- 現在の状態: `n <= 127`の厳密値を計算した。`2 <= n <= 104`では
+  `A000720(n)`と一致し、`105 <= n <= 127`では`A000720(n) + 1`となる。
+  また、奇素数`p`について`a(p) = a(p-1) + 1`であり、計算範囲内で
+  合成数における増加は`n = 105`だけである。Problem #793の`oeis`欄を
+  `possible`から`A399779`へ置き換える1行差分のPR #415を提出した
 
 ### 今後の優先目標と候補選定方針
 
@@ -184,7 +197,8 @@ python -m pytest -q
 
 - 個人用`main`: Problem #84、#425、#1105の計算・検証資料を取り込み済み
 - 計算用ブランチ: `compute-problem-84`、`compute-problem-425`、`compute-problem-1105`を履歴として保持
-- PR用ブランチ: `codex/link-problem-84-a399654`、`link-problem-1105-oeis`、`codex/link-problem-896-a399711`
+- PR用ブランチ: `codex/link-problem-84-a399654`、`link-problem-1105-oeis`、
+  `codex/link-problem-896-a399711`、`codex/link-problem-793-a399779`
 - remote: 自分のforkを指す `origin` と、本家を指す `upstream`
 - テスト: `python3 -m pytest -q` は成功（3 passed）
 - validation: `.venv/bin/python scripts/validate.py` は成功
@@ -267,9 +281,28 @@ python -m pytest -q
 - Issue #290はopenのままで、自分が投稿した3件の計算報告以外に新しいコメントはないことを確認した。
 - A399654、A399683、A399687、A399711のOEIS登録と、対応する上流PRの提出まで完了しているため、現在はPRのレビュー待ちとする。
 
+### 2026-09-12
+
+- Problem #793に対応するstrongly 2-primitive集合の最大濃度を
+  [A399779](https://oeis.org/A399779)として登録した。
+- 3種類の厳密探索プログラムを作成し、禁止ハイパーグラフへの変換、
+  最小hitting set探索、不等式`F(n) <= F(n-1) + 1`、単位制約、
+  packing下界および分岐の完全性を検査した。
+- `n <= 127`の値を求め、`2 <= n <= 104`では`A000720(n)`、
+  `105 <= n <= 127`では`A000720(n) + 1`となることを確認した。
+- 奇素数`p`について`a(p) = a(p-1) + 1`を証明した。`p = 2`は
+  `a(1) = a(2) = 1`なので例外である。
+- 最新の`upstream/main`からPR用ブランチ
+  `codex/link-problem-793-a399779`を作成し、Problem #793の`oeis`欄を
+  `possible`から`A399779`へ変更する上流PR #415を提出した。
+- PR #415は1行だけの差分で、`.venv/bin/python scripts/validate.py`と
+  `git diff --check`が成功した。PR本文にはAI支援を明記した。
+- 上流PR #406、#408、#412、#415はいずれもopenで、レビュー、コメント、
+  CI結果はまだない。
+
 ## 次にやること
 
-1. openの上流PR #406、#408、#412のCI・レビューを待つ。
+1. openの上流PR #406、#408、#412、#415のCI・レビューを待つ。
 2. 修正依頼があれば、それぞれのPR用ブランチで対応する。
 3. マージ後に`upstream/main`を個人用`main`へ取り込み、個人用資料を保持したまま同期する。不要になったPR専用ブランチは削除してよい。
 4. 計算記録と作業履歴を保持するため、各`compute-problem-N`ブランチは当面残す。
