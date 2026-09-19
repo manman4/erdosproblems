@@ -1,6 +1,6 @@
 # 貢献計画・進捗メモ
 
-最終更新: 2026-09-12
+最終更新: 2026-09-19
 
 このファイルは、Erdős problemsに関連する数列のOEIS登録候補、調査結果、
 計算状況、および必要に応じた`teorth/erdosproblems`への報告を継続的に
@@ -28,26 +28,26 @@ problemsとOEISに関する個人用の研究辞書として使用する。上�
 Erdős problem #84 のサイクル長集合、Problem #1105 のパス・サイクルの
 反Ramsey数、Problem #896 の一意な積表現の最大個数、およびProblem #793 の
 strongly 2-primitive集合の最大濃度をOEISへ登録しました。
-対応する上流データ更新PRは、2026-09-12現在、いずれもopenです。
-レビュー、コメント、CI結果はまだありません。
+対応する上流データ更新PR #406、#408、#412、#415は、いずれも
+2026-09-19（日本時間）に`teorth/erdosproblems`の`main`へマージされました。
 
 - 上流 Issue: [#290: Computing sequence for Erdős problem #84](https://github.com/teorth/erdosproblems/issues/290)
 - 上流 PR: [#406: Link problem 84 to OEIS A399654](https://github.com/teorth/erdosproblems/pull/406)
 - OEIS: [A399654](https://oeis.org/A399654)
 - 内容: `n` 頂点グラフに現れ得るサイクル長集合の種類数 `f(n)` を計算する
 - 目標: 小さい `n` の正確な値、再現可能なコード、独立した検算方法を用意する
-- 現在の状態: `n = 10` まで既知値を独立再現し、`n = 11` では全1,018,997,864個の非同型単純グラフを列挙して `f(11) = 247` を得た。再実行結果もSHA-256まで一致した
+- 現在の状態: `n = 10` まで既知値を独立再現し、`n = 11` では全1,018,997,864個の非同型単純グラフを列挙して `f(11) = 247` を得た。再実行結果もSHA-256まで一致し、PR #406は上流へマージされた
 
 - Problem #1105: [Erdős Problem 1105](https://www.erdosproblems.com/1105)
 - 上流 PR: [#408: Link problem 1105 to OEIS A399683 and A399687](https://github.com/teorth/erdosproblems/pull/408)
 - OEIS: [A399683](https://oeis.org/A399683)（パス）、[A399687](https://oeis.org/A399687)（サイクル）
-- 現在の状態: 論文の厳密公式から三角配列を作成し、公式を使わないPython版とC版の列挙でも小さい場合を検証した。資料は`experiments/problem_1105/A399683`と`experiments/problem_1105/A399687`に分け、A399683の`k=3,4`についてはLean 4による形式化も保存した
+- 現在の状態: 論文の厳密公式から三角配列を作成し、公式を使わないPython版とC版の列挙でも小さい場合を検証した。資料は`experiments/problem_1105/A399683`と`experiments/problem_1105/A399687`に分け、A399683の`k=3,4`についてはLean 4による形式化も保存した。PR #408は上流へマージされた
 
 - Problem #896: [Erdős Problem 896](https://www.erdosproblems.com/896)
 - 上流 PR: [#412: Link problem 896 to OEIS A399711](https://github.com/teorth/erdosproblems/pull/412)
 - OEIS: [A399711](https://oeis.org/A399711)
 - 内容: `S,T` を `{1,...,n}` の部分集合としたとき、`m = s*t` が `S × T` 内でちょうど1通りに表される正整数 `m` の個数の最大値
-- 現在の状態: A399711を登録し、Problem #896の`oeis`欄の`possible`を`A399711`に置き換える1行差分のPR #412を提出した
+- 現在の状態: A399711を登録し、Problem #896の`oeis`欄の`possible`を`A399711`に置き換える1行差分のPR #412が上流へマージされた
 
 - Problem #793: [Erdős Problem 793](https://www.erdosproblems.com/793)
 - 上流 PR: [#415: Link problem 793 to OEIS A399779](https://github.com/teorth/erdosproblems/pull/415)
@@ -59,7 +59,7 @@ strongly 2-primitive集合の最大濃度をOEISへ登録しました。
   `A000720(n)`と一致し、`105 <= n <= 127`では`A000720(n) + 1`となる。
   また、奇素数`p`について`a(p) = a(p-1) + 1`であり、計算範囲内で
   合成数における増加は`n = 105`だけである。Problem #793の`oeis`欄を
-  `possible`から`A399779`へ置き換える1行差分のPR #415を提出した
+  `possible`から`A399779`へ置き換える1行差分のPR #415は上流へマージされた
 
 ### 今後の優先目標と候補選定方針
 
@@ -142,16 +142,17 @@ python -m pytest -q
 
 - [x] AI支援を利用した範囲を報告文案に明記する
 - [x] コード、値、検算方法を上流 Issue #290 に報告する
-- [x] `data/problems.yaml` の更新PR #406を作る
+- [x] `data/problems.yaml` の更新PR #406を作り、上流へマージする
 - [ ] 数学的な詳しい議論は erdosproblems.com の問題ページへ投稿する
 
 ## その他の候補
 
 | 優先度 | 分野 | 候補 | 状態・所感 |
 |---|---|---|---|
-| 完了 | Python・グラフ | [Issue #290 / Problem #84](https://github.com/teorth/erdosproblems/issues/290) | A399654を登録し、PR #406を提出済み |
-| 完了 | グラフ・反Ramsey理論 | [Problem #1105](https://www.erdosproblems.com/1105) | パスをA399683、サイクルをA399687として登録し、PR #408を提出済み |
-| 完了 | 数論・積表現 | [Problem #896](https://www.erdosproblems.com/896) | A399711を登録し、PR #412を提出済み |
+| 完了 | Python・グラフ | [Issue #290 / Problem #84](https://github.com/teorth/erdosproblems/issues/290) | A399654を登録し、PR #406が上流へマージ済み |
+| 完了 | グラフ・反Ramsey理論 | [Problem #1105](https://www.erdosproblems.com/1105) | パスをA399683、サイクルをA399687として登録し、PR #408が上流へマージ済み |
+| 完了 | 数論・積表現 | [Problem #896](https://www.erdosproblems.com/896) | A399711を登録し、PR #412が上流へマージ済み |
+| 完了 | 数論・primitive集合 | [Problem #793](https://www.erdosproblems.com/793) | A399779を登録し、PR #415が上流へマージ済み |
 | 2 | Web・データ設計 | [Issue #370: forum情報の追加](https://github.com/teorth/erdosproblems/issues/370) | スキーマ、生成処理、UIの変更候補 |
 | 3 | 最適化・MILP | [Issue #300 / Problem #425](https://github.com/teorth/erdosproblems/issues/300) | 既存計算の独立検算が必要 |
 | 4 | 計算幾何 | [Issue #298 / Problem #1086](https://github.com/teorth/erdosproblems/issues/298) | 点配置の探索が必要 |
@@ -195,13 +196,16 @@ python -m pytest -q
 
 ## 現在確認できている環境
 
-- 個人用`main`: Problem #84、#425、#1105の計算・検証資料を取り込み済み
-- 計算用ブランチ: `compute-problem-84`、`compute-problem-425`、`compute-problem-1105`を履歴として保持
-- PR用ブランチ: `codex/link-problem-84-a399654`、`link-problem-1105-oeis`、
-  `codex/link-problem-896-a399711`、`codex/link-problem-793-a399779`
+- 個人用`main`: Problem #84、#425、#1105の計算・検証資料を取り込み、
+  最新の`upstream/main`とも同期済み
+- 計算用ブランチ: 未統合のProblem #84資料を確認するため、
+  `compute-problem-84`だけを残している。最新の`main`は取り込み済み
+- PR用ブランチ: PR #406、#408、#412、#415のマージ後、ローカルとforkの
+  両方から削除済み
 - remote: 自分のforkを指す `origin` と、本家を指す `upstream`
-- テスト: `python3 -m pytest -q` は成功（3 passed）
-- validation: `.venv/bin/python scripts/validate.py` は成功
+- Problem #84検証: C++20列挙器のコンパイルと、保存済み`n = 11`結果の
+  `verify_nauty_results.py`による検証に成功
+- validation: `.venv/bin/python scripts/validate.py` は2026-09-19に成功
 
 ## 進捗ログ
 
@@ -300,11 +304,27 @@ python -m pytest -q
 - 上流PR #406、#408、#412、#415はいずれもopenで、レビュー、コメント、
   CI結果はまだない。
 
+### 2026-09-19
+
+- 上流PR #406、#408、#412、#415がすべて`teorth/erdosproblems`の
+  `main`へマージされたことを確認した。
+- forkの`main`を`origin/main`へfast-forwardし、最新の`upstream/main`が
+  含まれていることを確認した。`.venv/bin/python scripts/validate.py`も成功した。
+- マージ済みのPR用ブランチ4本と、個人用`main`へ統合済みの
+  `compute-problem-1105`、`compute-problem-425`、安全規則用ブランチを、
+  ローカルとforkから整理した。
+- `compute-problem-84`には未統合のC++列挙器と`n = 11`の結果があるため、
+  削除せず残した。
+- `main`を`compute-problem-84`へ取り込んだ。`AGENTS.md`の競合は、
+  安全規則を`CLAUDE.md`へ集約し、`AGENTS.md`から参照する現在の方針で解消した。
+- C++20列挙器のコンパイル、`results_nauty_n11.json`のPython検証、
+  SHA-256 `12adf4d7012a0e0fbd58baeb7662a23220dd73b078db8e5c0b3c39e07325a26e`
+  の再確認に成功した。
+
 ## 次にやること
 
-1. openの上流PR #406、#408、#412、#415のCI・レビューを待つ。
-2. 修正依頼があれば、それぞれのPR用ブランチで対応する。
-3. マージ後に`upstream/main`を個人用`main`へ取り込み、個人用資料を保持したまま同期する。不要になったPR専用ブランチは削除してよい。
-4. 計算記録と作業履歴を保持するため、各`compute-problem-N`ブランチは当面残す。
-5. Problem #425は人間による一次資料または独立再実装が得られるまでOEIS投稿を進めない。
-6. 次のOEIS登録候補を選ぶ前に、最新のIssueと`data/problems.yaml`を改めて確認する。
+1. `compute-problem-84`にだけ残るC++列挙器と`n = 11`の検証資料を確認し、
+   個人用`main`へ統合する。
+2. 統合後に`compute-problem-84`を削除し、通常は`main`だけの状態へ戻す。
+3. Problem #425は人間による一次資料または独立再実装が得られるまでOEIS投稿を進めない。
+4. 次のOEIS登録候補を選ぶ前に、最新のIssueと`data/problems.yaml`を改めて確認する。
