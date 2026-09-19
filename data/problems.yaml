@@ -340,8 +340,8 @@
     last_update: "2026-08-24"
   oeis: ["A391599"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["combinatorics", "intersecting family"]
 
 - number: "22"
@@ -472,8 +472,8 @@
     last_update: "2026-08-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["number theory", "additive basis"]
 
 - number: "30"
@@ -571,8 +571,8 @@
     last_update: "2026-08-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["number theory", "additive basis"]
 
 - number: "36"
@@ -2086,8 +2086,8 @@
     last_update: "2026-08-24"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["graph theory"]
 
 - number: "128"
@@ -2417,8 +2417,8 @@
     last_update: "2026-08-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["graph theory", "turan number"]
 
 - number: "148"
@@ -3145,8 +3145,8 @@
     last_update: "2026-08-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["combinatorics", "ramsey theory"]
 
 - number: "192"
@@ -5089,8 +5089,8 @@
     last_update: "2026-08-24"
   oeis: ["A217693"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["number theory", "unit fractions"]
 
 - number: "310"
@@ -5956,8 +5956,8 @@
     last_update: "2026-08-24"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["number theory"]
 
 - number: "363"
@@ -6431,8 +6431,8 @@
     last_update: "2026-08-24"
   oeis: ["A034258", "A034259"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["number theory", "factorials"]
 
 - number: "392"
@@ -6497,8 +6497,8 @@
     last_update: "2026-08-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   comments: "reverse Littlewood-Offord problem"
   tags: ["analysis"]
 
@@ -8051,8 +8051,8 @@
     last_update: "2026-05-22"
   oeis: ["A397205"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-19"
   tags: ["number theory"]
 
 - number: "491"
@@ -16751,8 +16751,8 @@
     state: "solved (Lean)"
     last_update: "2026-09-15"
   formalized:
-    state: "no"
-    last_update: "2025-09-10"
+    state: "yes"
+    last_update: "2026-09-19"
   oeis: ["possible"]
   tags: ["combinatorics"]
 
@@ -17635,8 +17635,8 @@
     state: "solved"
     last_update: "2025-10-14"
   formalized:
-    state: "no"
-    last_update: "2025-09-28"
+    state: "yes"
+    last_update: "2026-09-19"
   oeis: ["N/A"]
   tags: ["graph theory", "turan number"]
 
