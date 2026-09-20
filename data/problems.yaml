@@ -1182,8 +1182,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["graph theory", "cycles"]
 
 - number: "73"
@@ -1559,8 +1559,8 @@
     last_update: "2026-08-24"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["geometry", "convex", "distances"]
 
 - number: "96"
@@ -17296,8 +17296,8 @@
     state: "proved"
     last_update: "2025-09-28"
   formalized:
-    state: "no"
-    last_update: "2025-09-28"
+    state: "yes"
+    last_update: "2026-09-20"
   oeis: ["N/A"]
   tags: ["number theory"]
 
@@ -19384,8 +19384,8 @@
     state: "solved"
     last_update: "2026-04-04"
   formalized:
-    state: "no"
-    last_update: "2026-04-04"
+    state: "yes"
+    last_update: "2026-09-20"
   oeis: ["N/A"]
   tags: ["number theory", "primes", "additive combinatorics", "arithmetic progressions"]
 
