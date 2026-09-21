@@ -11802,8 +11802,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "721"
@@ -12567,8 +12567,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["graph theory", "turan number"]
 
 - number: "768"
@@ -14348,8 +14348,8 @@
     last_update: "2025-08-31"
   oeis: ["A121269", "possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["additive combinatorics"]
 
 - number: "878"
@@ -16324,8 +16324,8 @@
     state: "proved"
     last_update: "2025-09-07"
   formalized:
-    state: "no"
-    last_update: "2025-09-07"
+    state: "yes"
+    last_update: "2026-09-21"
   oeis: ["N/A"]
   comments: "Duffin-Schaeffer conjecture"
   tags: ["number theory", "diophantine approximation"]
