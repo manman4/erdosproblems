@@ -1182,8 +1182,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["graph theory", "cycles"]
 
 - number: "73"
@@ -1559,8 +1559,8 @@
     last_update: "2026-08-24"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["geometry", "convex", "distances"]
 
 - number: "96"
@@ -3709,8 +3709,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["analysis"]
 
 - number: "226"
@@ -4713,8 +4713,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory", "unit fractions"]
 
 - number: "287"
@@ -5024,8 +5024,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory", "unit fractions"]
 
 - number: "306"
@@ -5072,8 +5072,8 @@
     last_update: "2025-08-31"
   oeis: ["A101877", "possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory", "unit fractions"]
 
 - number: "309"
@@ -6696,8 +6696,8 @@
     last_update: "2025-08-31"
   oeis: ["possible", "A387688"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory"]
 
 - number: "408"
@@ -7186,8 +7186,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory"]
 
 - number: "438"
@@ -7234,8 +7234,8 @@
     last_update: "2025-12-27"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory"]
 
 - number: "441"
@@ -8629,8 +8629,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["analysis", "probability", "polynomials"]
 
 - number: "526"
@@ -8906,8 +8906,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory"]
 
 - number: "543"
@@ -9187,8 +9187,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "560"
@@ -9540,8 +9540,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["graph theory"]
 
 - number: "582"
@@ -9621,8 +9621,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory", "covering systems"]
 
 - number: "587"
@@ -10895,8 +10895,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["combinatorics"]
 
 - number: "665"
@@ -11041,8 +11041,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory", "divisors"]
 
 - number: "674"
@@ -11187,8 +11187,8 @@
     last_update: "2025-08-31"
   oeis: ["A386978"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["number theory", "primes"]
 
 - number: "683"
@@ -11315,8 +11315,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory"]
 
 - number: "691"
@@ -11527,8 +11527,8 @@
     last_update: "2025-08-31"
   oeis: ["A390645"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["combinatorics"]
 
 - number: "704"
@@ -11802,8 +11802,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "721"
@@ -12254,8 +12254,8 @@
     last_update: "2025-08-31"
   oeis: ["A007865"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   comments: "Cameron-Erdős conjecture"
   tags: ["number theory"]
 
@@ -12567,8 +12567,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["graph theory", "turan number"]
 
 - number: "768"
@@ -12647,8 +12647,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory", "sidon sets", "additive combinatorics"]
 
 - number: "773"
@@ -12792,8 +12792,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["additive combinatorics"]
 
 - number: "782"
@@ -13149,8 +13149,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["graph theory"]
 
 - number: "804"
@@ -13165,8 +13165,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["graph theory"]
 
 - number: "805"
@@ -13325,8 +13325,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["graph theory"]
 
 - number: "815"
@@ -13759,8 +13759,8 @@
     last_update: "2025-08-31"
   oeis: ["A092487"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["number theory"]
 
 - number: "842"
@@ -13775,8 +13775,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["graph theory", "chromatic number"]
 
 - number: "843"
@@ -14039,8 +14039,8 @@
     last_update: "2026-04-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-20"
   tags: ["number theory", "primitive sets"]
 
 - number: "859"
@@ -14348,8 +14348,8 @@
     last_update: "2025-08-31"
   oeis: ["A121269", "possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-21"
   tags: ["additive combinatorics"]
 
 - number: "878"
@@ -16324,8 +16324,8 @@
     state: "proved"
     last_update: "2025-09-07"
   formalized:
-    state: "no"
-    last_update: "2025-09-07"
+    state: "yes"
+    last_update: "2026-09-21"
   oeis: ["N/A"]
   comments: "Duffin-Schaeffer conjecture"
   tags: ["number theory", "diophantine approximation"]
@@ -16504,8 +16504,8 @@
     state: "proved"
     last_update: "2025-09-10"
   formalized:
-    state: "no"
-    last_update: "2025-09-10"
+    state: "yes"
+    last_update: "2026-09-20"
   oeis: ["N/A"]
   tags: ["graph theory"]
 
@@ -16784,8 +16784,8 @@
     state: "proved"
     last_update: "2025-10-01"
   formalized:
-    state: "no"
-    last_update: "2025-09-10"
+    state: "yes"
+    last_update: "2026-09-20"
   oeis: ["N/A"]
   tags: ["combinatorics"]
 
@@ -17296,8 +17296,8 @@
     state: "proved"
     last_update: "2025-09-28"
   formalized:
-    state: "no"
-    last_update: "2025-09-28"
+    state: "yes"
+    last_update: "2026-09-20"
   oeis: ["N/A"]
   tags: ["number theory"]
 
@@ -19256,8 +19256,8 @@
     state: "proved"
     last_update: "2026-01-26"
   formalized:
-    state: "no"
-    last_update: "2026-01-25"
+    state: "yes"
+    last_update: "2026-09-20"
   oeis: ["N/A"]
   tags: ["additive combinatorics", "probability"]
 
@@ -19384,8 +19384,8 @@
     state: "solved"
     last_update: "2026-04-04"
   formalized:
-    state: "no"
-    last_update: "2026-04-04"
+    state: "yes"
+    last_update: "2026-09-20"
   oeis: ["N/A"]
   tags: ["number theory", "primes", "additive combinatorics", "arithmetic progressions"]
 
