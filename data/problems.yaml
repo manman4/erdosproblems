@@ -306,8 +306,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-27"
   tags: ["graph theory", "chromatic number"]
 
 - number: "20"
@@ -1279,8 +1279,8 @@
     last_update: "2025-08-31"
   oeis: ["A059442"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-27"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "79"
@@ -1671,8 +1671,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-27"
   tags: ["geometry"]
 
 - number: "103"
@@ -1687,8 +1687,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-27"
   tags: ["geometry", "distances"]
 
 - number: "104"
@@ -2433,8 +2433,8 @@
     last_update: "2025-08-31"
   oeis: ["A076393", "A006585"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-27"
   tags: ["number theory", "unit fractions"]
 
 - number: "149"
@@ -7967,8 +7967,8 @@
     last_update: "2025-08-31"
   oeis: ["A004539"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-09-28"
   tags: ["number theory"]
 
 - number: "483"
@@ -16404,8 +16404,8 @@
     state: "open"
     last_update: "2025-09-07"
   formalized:
-    state: "no"
-    last_update: "2025-09-07"
+    state: "yes"
+    last_update: "2026-09-27"
   oeis: ["N/A"]
   tags: ["analysis", "discrepancy"]
 
