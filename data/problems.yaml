@@ -1327,8 +1327,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   tags: ["graph theory"]
 
 - number: "82"
@@ -2151,8 +2151,8 @@
     last_update: "2025-08-31"
   oeis: ["A068063"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   tags: ["number theory"]
 
 - number: "132"
@@ -6093,8 +6093,8 @@
     last_update: "2025-08-31"
   oeis: ["A074399"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   tags: ["number theory"]
 
 - number: "369"
@@ -6320,8 +6320,8 @@
     last_update: "2025-08-31"
   oeis: ["A388850"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   tags: ["number theory"]
 
 - number: "383"
@@ -7109,8 +7109,8 @@
     last_update: "2025-08-31"
   oeis: ["A322293", "possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   tags: ["number theory"]
 
 - number: "431"
@@ -9982,8 +9982,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   comments: "pinned distance problem"
   tags: ["geometry", "distances"]
 
@@ -10360,8 +10360,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   tags: ["graph theory", "chromatic number"]
 
 - number: "628"
@@ -10929,8 +10929,8 @@
     last_update: "2025-08-31"
   oeis: ["A186704", "possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   tags: ["geometry", "distances"]
 
 - number: "662"
@@ -11076,8 +11076,8 @@
     last_update: "2026-04-16"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-08"
   tags: ["geometry", "distances"]
 
 - number: "671"
@@ -20105,8 +20105,8 @@
     state: "proved"
     last_update: "2026-09-12"
   formalized:
-    state: "no"
-    last_update: "2026-09-12"
+    state: "yes"
+    last_update: "2026-10-08"
   oeis: ["N/A"]
   tags: ["ramsey theory", "set theory"]
 
