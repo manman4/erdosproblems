@@ -1,12 +1,28 @@
 #!/usr/bin/env python3
 """
 Manages the statistics history CSV and generates progress charts.
+
+**The charts are frozen as of 2026-10-06.**  `update_history` still runs, so
+`data/statistics_history.csv` continues to accumulate; only the rendered SVGs
+are frozen, and the README links to them rather than displaying them inline.
+
+This follows the policy change announced at
+<https://www.erdosproblems.com/forum/thread/blog:9> on 6 October 2026, under
+which erdosproblems.com no longer displays problem statuses, the count of
+solved problems, or the solved percentage.  A progress chart of solved and
+formalized counts over time is the same kind of scoreboard, so its prominence
+here is reduced in step.  The underlying series is still recorded, since the
+data remains useful; what is withdrawn is its promotion to a headline graphic.
+
+To regenerate deliberately (which un-freezes the committed SVGs), call
+`generate_charts(force=True)` or run this script with `--force`.
 """
 
+import argparse
 from pathlib import Path
 import csv
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
@@ -14,6 +30,17 @@ ROOT = Path(__file__).resolve().parents[1]
 CSV_FILE = ROOT / "data" / "statistics_history.csv"
 OUTPUT_LIGHT = ROOT / "data" / "statistics_history_light.svg"
 OUTPUT_DARK = ROOT / "data" / "statistics_history_dark.svg"
+
+#: Date the rendered charts were frozen; see the module docstring.
+CHARTS_FROZEN_ON = "2026-10-06"
+
+# The first rows of the history (2025-08-31, roughly 10:00 to 12:10 Pacific) were
+# written while the problem set was still being imported: the total went from
+# 2 to 992 and the solved count from 1 to 355 within a few hours.  Those rows
+# are kept in the CSV as a record but make no sense on the chart, where they
+# show up as vertical lines at the left edge.  Plot from the first row with
+# complete data.
+PLOT_START = datetime(2025, 8, 31, 12, 49, 49, tzinfo=timezone(timedelta(hours=-7)))
 
 FIELDNAMES = ["commit", "date", "total_problems", "lean_formalized", 
               "oeis_linked", "total_solved", "proved", "disproved", "solved", "lean_solved", "open"]
@@ -109,7 +136,12 @@ def create_plot(dates, lean_counts, oeis_counts, solve_counts, lean_solved_count
     ax.set_xlabel("Date", fontsize=12, color=colors['text'])
     ax.set_ylabel("Count", fontsize=12, color=colors['text'])
     ax.set_title("Erdős Problems Progress", fontsize=14, fontweight='bold', color=colors['text'], pad=20)
-    ax.set_ylim((0,750)) # hardcoded y limit, can change later
+    # Anchor at zero; scale the ceiling to the data so growing series never clip.
+    max_count = max((max(counts) for counts, _, _ in data if counts), default=0)
+    ax.set_ylim(0, max(max_count * 1.05, 1))
+    # Start the x-axis at the first plotted date instead of matplotlib's default margin.
+    if dates:
+        ax.set_xlim(left=dates[0])
     
     legend = ax.legend(loc='upper left', fontsize=10, facecolor=colors['box_bg'], edgecolor=colors['grid'])
     plt.setp(legend.get_texts(), color=colors['text'])
@@ -131,8 +163,21 @@ def create_plot(dates, lean_counts, oeis_counts, solve_counts, lean_solved_count
     plt.tight_layout()
     return fig
 
-def generate_charts():
-    """Reads history and generates SVG charts."""
+def generate_charts(force: bool = False):
+    """Reads history and generates SVG charts.
+
+    Frozen as of ``CHARTS_FROZEN_ON``: without ``force`` this is a no-op, so
+    the committed SVGs keep showing the series as it stood on that date.  See
+    the module docstring for why.
+    """
+    if not force:
+        print(
+            f"Progress charts are frozen as of {CHARTS_FROZEN_ON}; leaving the "
+            f"committed SVGs untouched.  The history CSV is still being updated. "
+            f"Pass --force (or force=True) to regenerate deliberately."
+        )
+        return
+
     if not CSV_FILE.exists():
         return
 
@@ -140,10 +185,13 @@ def generate_charts():
     with CSV_FILE.open("r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
+            date = datetime.strptime(row["date"], "%Y-%m-%d %H:%M:%S %z")
+            if date < PLOT_START:
+                continue
             total = _as_int(row.get("total_problems"))
             solved = _as_int(row.get("total_solved"))
             data_points.append({
-                'date': datetime.strptime(row["date"], "%Y-%m-%d %H:%M:%S %z"),
+                'date': date,
                 'lean': _as_int(row.get("lean_formalized")),
                 'oeis': _as_int(row.get("oeis_linked")),
                 'solve': solved,
@@ -170,4 +218,10 @@ def generate_charts():
         
 
 if __name__ == "__main__":
-    generate_charts()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help=f"regenerate the SVGs even though they are frozen as of {CHARTS_FROZEN_ON}",
+    )
+    generate_charts(force=parser.parse_args().force)
