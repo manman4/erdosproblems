@@ -45,3 +45,12 @@ contribution and AI-use rules.
   does not establish the scope of an upstream PR.
 - After creating or updating the PR, verify its commits and files on GitHub
   against the upstream base branch before reporting its scope to the user.
+
+## OEIS link contributions
+
+Before evaluating or preparing OEIS-link contributions, read and apply
+[the personal OEIS-link skill](.agents/skills/erdos-oeis-links/SKILL.md).
+Check the current upstream
+[Notes on template fields](https://github.com/teorth/erdosproblems/blob/main/CONTRIBUTING.md#notes-on-template-fields)
+and the other applicable contribution rules. Keep this skill on the personal
+branches and exclude it from upstream PRs.
