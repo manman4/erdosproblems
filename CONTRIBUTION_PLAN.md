@@ -1,10 +1,10 @@
 # 貢献計画・進捗メモ
 
-最終更新: 2026-09-19
+最終更新: 2026-10-12
 
-このファイルは、Erdős problemsに関連する数列のOEIS登録候補、調査結果、
-計算状況、および必要に応じた`teorth/erdosproblems`への報告を継続的に
-記録するための個人用メモです。
+このファイルは、Erdős problemsに関連する数列について、実施済みの調査、
+計算・検証結果、OEIS公開および`teorth/erdosproblems`への貢献実績を
+記録する個人用メモです。未公開の候補や今後の予定は記載しません。
 
 ## forkの運用方針
 
@@ -23,7 +23,36 @@ problemsとOEISに関する個人用の研究辞書として使用する。上�
 - 上流に載せない資料であっても、出典、AI支援の範囲、検証方法および
   再現手順を可能な限り記録する。
 
-## 現在の方針
+## 最近の成果と上流PRの状態
+
+2026-10-12（日本時間）にGitHubで確認した状態です。
+OEISでの公開・承認と、上流PRのマージは別々に記録します。
+
+| Problem | OEIS | 内容 | 上流PR | 状態 |
+|---|---|---|---|---|
+| [#342](https://www.erdosproblems.com/342) | [A400867](https://oeis.org/A400867) | kとk+2がともにUlam数となるk | [#458](https://github.com/teorth/erdosproblems/pull/458) | OEIS公開済み・PR open |
+| [#698](https://www.erdosproblems.com/698) | [A400908](https://oeis.org/A400908) | 2 <= i <= j <= floor(n/2)における二項係数の対のgcdの最小値 | [#459](https://github.com/teorth/erdosproblems/pull/459) | OEIS承認済み・PR open |
+| [#696](https://www.erdosproblems.com/696) | [A399769](https://oeis.org/A399769), [A400930](https://oeis.org/A400930) | 次項から1を引いた数を前項が割る約数列・素約数列の最大長 | [#460](https://github.com/teorth/erdosproblems/pull/460) | OEIS承認済み・PR open |
+| [#379](https://www.erdosproblems.com/379) | [A400962](https://oeis.org/A400962) | 全内部二項係数が、それぞれ何らかの素数のe乗で割り切れる最大のe | [#462](https://github.com/teorth/erdosproblems/pull/462) | OEIS承認済み・PR open |
+| [#175](https://www.erdosproblems.com/175) | [A292441](https://oeis.org/A292441), [A292442](https://oeis.org/A292442) | 中央二項係数の最大平方因子の平方根と最大平方因子（既存数列） | [#463](https://github.com/teorth/erdosproblems/pull/463) | 既存OEISへのリンク追加・PR open |
+
+これらのPRは`data/problems.yaml`の該当`oeis`欄だけを変更し、
+個人用の研究資料・運用ルールを含めずに提出しました。
+
+### 定義の対応で確認した点
+
+- Problem #698は`i < j`、A400908は`i <= j`を許す。最小値は
+  `n >= 6`で一致し、A400908は`n = 4, 5`の値も定義できる。
+- Problem #696の約数列には1を含め、A399769(1) = 1。
+  素約数列では空列を許し、A400930(1) = 0。
+- Problem #379では素数が内部二項係数ごとに異なってよい。
+  A400962は有限の最大値が定義される`n = 2`から始まる。
+- Problem #175の平方因子を持つという主張は、`n >= 5`で
+  A292441(n) > 1、またはA292442(n) > 1と同値。
+  A292442(n) = A292441(n)^2であり、二つのリンクは同じ主張の
+  別表現である。問題ページで扱う最大素因数指数そのものではない。
+
+## 以前の成果（上流マージ済み）
 
 Erdős problem #84 のサイクル長集合、Problem #1105 のパス・サイクルの
 反Ramsey数、Problem #896 の一意な積表現の最大個数、およびProblem #793 の
@@ -36,18 +65,18 @@ strongly 2-primitive集合の最大濃度をOEISへ登録しました。
 - OEIS: [A399654](https://oeis.org/A399654)
 - 内容: `n` 頂点グラフに現れ得るサイクル長集合の種類数 `f(n)` を計算する
 - 目標: 小さい `n` の正確な値、再現可能なコード、独立した検算方法を用意する
-- 現在の状態: `n = 10` まで既知値を独立再現し、`n = 11` では全1,018,997,864個の非同型単純グラフを列挙して `f(11) = 247` を得た。再実行結果もSHA-256まで一致し、PR #406は上流へマージされた
+- 成果: `n = 10` まで既知値を独立再現し、`n = 11` では全1,018,997,864個の非同型単純グラフを列挙して `f(11) = 247` を得た。再実行結果もSHA-256まで一致し、PR #406は上流へマージされた
 
 - Problem #1105: [Erdős Problem 1105](https://www.erdosproblems.com/1105)
 - 上流 PR: [#408: Link problem 1105 to OEIS A399683 and A399687](https://github.com/teorth/erdosproblems/pull/408)
 - OEIS: [A399683](https://oeis.org/A399683)（パス）、[A399687](https://oeis.org/A399687)（サイクル）
-- 現在の状態: 論文の厳密公式から三角配列を作成し、公式を使わないPython版とC版の列挙でも小さい場合を検証した。資料は`experiments/problem_1105/A399683`と`experiments/problem_1105/A399687`に分け、A399683の`k=3,4`についてはLean 4による形式化も保存した。PR #408は上流へマージされた
+- 成果: 論文の厳密公式から三角配列を作成し、公式を使わないPython版とC版の列挙でも小さい場合を検証した。資料は`experiments/problem_1105/A399683`と`experiments/problem_1105/A399687`に分け、A399683の`k=3,4`についてはLean 4による形式化も保存した。PR #408は上流へマージされた
 
 - Problem #896: [Erdős Problem 896](https://www.erdosproblems.com/896)
 - 上流 PR: [#412: Link problem 896 to OEIS A399711](https://github.com/teorth/erdosproblems/pull/412)
 - OEIS: [A399711](https://oeis.org/A399711)
 - 内容: `S,T` を `{1,...,n}` の部分集合としたとき、`m = s*t` が `S × T` 内でちょうど1通りに表される正整数 `m` の個数の最大値
-- 現在の状態: A399711を登録し、Problem #896の`oeis`欄の`possible`を`A399711`に置き換える1行差分のPR #412が上流へマージされた
+- 成果: A399711を登録し、Problem #896の`oeis`欄の`possible`を`A399711`に置き換える1行差分のPR #412が上流へマージされた
 
 - Problem #793: [Erdős Problem 793](https://www.erdosproblems.com/793)
 - 上流 PR: [#415: Link problem 793 to OEIS A399779](https://github.com/teorth/erdosproblems/pull/415)
@@ -55,39 +84,11 @@ strongly 2-primitive集合の最大濃度をOEISへ登録しました。
 - 内容: `A`を`{1,...,n}`の部分集合とし、`a,b,c`が`A`に属し
   `a != b`, `a != c`ならば`a`が`b*c`を割らないという条件のもとでの
   `|A|`の最大値
-- 現在の状態: `n <= 127`の厳密値を計算した。`2 <= n <= 104`では
+- 成果: `n <= 127`の厳密値を計算した。`2 <= n <= 104`では
   `A000720(n)`と一致し、`105 <= n <= 127`では`A000720(n) + 1`となる。
   また、奇素数`p`について`a(p) = a(p-1) + 1`であり、計算範囲内で
   合成数における増加は`n = 105`だけである。Problem #793の`oeis`欄を
   `possible`から`A399779`へ置き換える1行差分のPR #415は上流へマージされた
-
-### 今後の優先目標と候補選定方針
-
-主目的は、Erdős problemsに関連し、まだOEISに登録されていない数列を、
-OEISの規則に従って登録することである。上流リポジトリへのIssueやPRは
-主目的ではなく、計算の共有や、承認されたA番号を対応付ける必要がある
-場合に行う。
-
-次の候補は、Problem #84と同様に、以下の条件を満たすものを優先する。
-
-1. 人間が作成した論文、学位論文、書籍などの一次資料に、有限個の既知値
-   または値を決定できる厳密な公式がある。
-2. 定義、添字の開始位置、同じ要素の使用可否などが明確である。
-3. 定義と初期項の両方からOEISを検索しても、同じ数列が見つからない。
-4. 既知値を、資料の計算とは別の実装または別の数学的表現で再現できる。
-5. 可能なら、既知範囲を少なくとも一項延長し、witness、実行コマンド、
-   実行環境、再実行結果およびチェックサムを保存できる。
-
-AIのみを出典とする値は、複数のAI支援実装が一致していても、この目的の
-第一候補にはしない。AIは候補調査、探索コードの補助、検証方法の提案、
-誤りの検出に利用できるが、OEISへ投稿する説明、コメント、プログラムは
-投稿者自身が理解、検証し、責任を持てるものにする。上流リポジトリへ
-共有する場合は、同リポジトリのより厳しい`CONTRIBUTING.md`にも従う。
-
-Problem #425の計算は探索的な再現として`experiments/problem_425`に保存し、
-個人用`main`にも取り込んだ。ただし、既知の有限表がAI working reportを
-中心としているため、現時点ではOEIS投稿や上流PRを進めず、人間による
-一次資料に既知項がある別の候補を優先する。
 
 ## 作業チェックリスト
 
@@ -145,43 +146,26 @@ python -m pytest -q
 - [x] `data/problems.yaml` の更新PR #406を作り、上流へマージする
 - [ ] 数学的な詳しい議論は erdosproblems.com の問題ページへ投稿する
 
-## その他の候補
-
-| 優先度 | 分野 | 候補 | 状態・所感 |
-|---|---|---|---|
-| 完了 | Python・グラフ | [Issue #290 / Problem #84](https://github.com/teorth/erdosproblems/issues/290) | A399654を登録し、PR #406が上流へマージ済み |
-| 完了 | グラフ・反Ramsey理論 | [Problem #1105](https://www.erdosproblems.com/1105) | パスをA399683、サイクルをA399687として登録し、PR #408が上流へマージ済み |
-| 完了 | 数論・積表現 | [Problem #896](https://www.erdosproblems.com/896) | A399711を登録し、PR #412が上流へマージ済み |
-| 完了 | 数論・primitive集合 | [Problem #793](https://www.erdosproblems.com/793) | A399779を登録し、PR #415が上流へマージ済み |
-| 2 | Web・データ設計 | [Issue #370: forum情報の追加](https://github.com/teorth/erdosproblems/issues/370) | スキーマ、生成処理、UIの変更候補 |
-| 3 | 最適化・MILP | [Issue #300 / Problem #425](https://github.com/teorth/erdosproblems/issues/300) | 既存計算の独立検算が必要 |
-| 4 | 計算幾何 | [Issue #298 / Problem #1086](https://github.com/teorth/erdosproblems/issues/298) | 点配置の探索が必要 |
-| 5 | SAT・Ramsey理論 | [Issue #291 / Problem #181](https://github.com/teorth/erdosproblems/issues/291) | 難度は比較的高い |
-| 6 | Lean | [Issue #392 / Problem #510](https://github.com/teorth/erdosproblems/issues/392) | 形式化経験が必要 |
-
-2026-09-06時点のローカルの `data/problems.yaml` では、OEIS欄が `possible` のみとなっている問題が266件あった。次の候補を選ぶ前に最新の`upstream/main`で再集計し、対話表で `OEIS = possible` と得意なタグを組み合わせて探す。
+## 過去の候補調査
 
 ### 候補調査ログ
 
-一度確認して見送った候補も、同じ調査を繰り返したり、既に作業中の人と
-競合したりしないように記録する。「見送り」は数学的価値が低いという
-意味ではなく、現在の「人間による一次資料の既知項を独立再現してOEISへ
-登録する」という目的に合うかどうかの判断である。
+以下は2026-09-19までの調査記録であり、現在の作業予定を示すものではありません。
 
-| Problem | 判断 | 理由・再検討条件 |
+| Problem | 判断 | 当時の確認結果 |
 |---|---|---|
-| [#425](https://www.erdosproblems.com/425) | 当面見送り | 有限表の主要な公開出典がAI working reportであり、ローカル計算もAI支援を含む。人間による独立した有限表または再実装が得られれば再検討する。探索結果は`experiments/problem_425`に保存し、個人用`main`へ取り込んだ。 |
-| [#272](https://www.erdosproblems.com/272) | 競合回避 | Zhanfu Yangの[2026年プレプリント](https://arxiv.org/abs/2607.23004)が`t(3), ..., t(12)`を厳密計算しているが、Claude支援を明記し、著者自身がOEISへ投稿予定と述べている。投稿状況が長期間変わらない場合のみ、著者への確認後に再検討する。 |
+| [#425](https://www.erdosproblems.com/425) | 当面見送り | 有限表の主要な公開出典がAI working reportであり、ローカル計算もAI支援を含む。探索結果は`experiments/problem_425`に保存し、個人用`main`へ取り込んだ。 |
+| [#272](https://www.erdosproblems.com/272) | 競合回避 | Zhanfu Yangの[2026年プレプリント](https://arxiv.org/abs/2607.23004)が`t(3), ..., t(12)`を厳密計算しているが、Claude支援を明記し、著者自身がOEISへ投稿予定と述べている。 |
 | [#1005](https://www.erdosproblems.com/1005) | 対象外 | 関連数列は既に[OEIS A386893](https://oeis.org/A386893)として登録されている。 |
 | [#82](https://www.erdosproblems.com/82) | 対象外 | 関連する「`n`頂点グラフの最大正則誘導部分グラフの大きさの最小値」の数列は、既に[OEIS A390257](https://oeis.org/A390257)として登録されている。 |
 | [#284](https://www.erdosproblems.com/284) | 競合回避 | [Issue #271](https://github.com/teorth/erdosproblems/issues/271)で、既存の担当者が人間によるclean-room再実装とOEIS投稿を進行中と明記している。 |
 | [#293](https://www.erdosproblems.com/293) | 当面見送り | [Issue #403](https://github.com/teorth/erdosproblems/issues/403)の値はAI支援コードによるもので、問題文の定義にも過去の曖昧さがある。人間による一次資料の有限表という条件を満たさない。 |
-| [#336](https://www.erdosproblems.com/336) | 優先度を下げる | 現在確認できる厳密値は少なく、次の値にも未確定の幅があるため、OEISの新規数列として照合・検証するには項数が不足している。厳密値が追加された場合に再検討する。 |
+| [#336](https://www.erdosproblems.com/336) | 当時は見送り | 現在確認できる厳密値は少なく、次の値にも未確定の幅があるため、OEISの新規数列として照合・検証するには項数が不足している。 |
 | [#393](https://www.erdosproblems.com/393) | 対象外 | 関連数列は既に[OEIS A388302](https://oeis.org/A388302)として登録されている。 |
-| [#644](https://www.erdosproblems.com/644) | 予備調査で見送り | 特殊なパラメータに対する式への言及はあるが、人間による一次資料の有限表、定義、添字をまだ十分に確認できていない。一次資料を特定できた場合に候補へ戻す。 |
-| [#857](https://www.erdosproblems.com/857) | 当面見送り | 現在見つかった計算活動はAI支援・形式化を中心としており、Problem #84型の人間由来の既知項を持つ一次資料という条件を満たすことを確認できていない。人間による論文の有限表が見つかれば再検討する。 |
+| [#644](https://www.erdosproblems.com/644) | 予備調査で見送り | 特殊なパラメータに対する式への言及はあるが、人間による一次資料の有限表、定義、添字をまだ十分に確認できていない。 |
+| [#857](https://www.erdosproblems.com/857) | 当面見送り | 現在見つかった計算活動はAI支援・形式化を中心としており、Problem #84型の人間由来の既知項を持つ一次資料という条件を満たすことを確認できていない。 |
 | [#993](https://www.erdosproblems.com/993) | 対象外 | 論文には木の独立集合多項式の単峰性を29頂点まで検証した範囲があるが、それ自体は各`n`に自然数値を割り当てる有限表ではなく、今回のOEIS登録目標に直接対応しない。 |
-| [#181](https://www.erdosproblems.com/181), [#506](https://www.erdosproblems.com/506), [#1086](https://www.erdosproblems.com/1086) | 優先度を下げる | 自然な数列はあるが、現在のHELP WANTED Issueには登録に十分な人間由来の既知項がなく、計算も比較的難しい。新しい論文・学位論文の有限表が見つかれば再検討する。 |
+| [#181](https://www.erdosproblems.com/181), [#506](https://www.erdosproblems.com/506), [#1086](https://www.erdosproblems.com/1086) | 当時は見送り | 自然な数列はあるが、現在のHELP WANTED Issueには登録に十分な人間由来の既知項がなく、計算も比較的難しい。 |
 
 ## 貢献時の注意
 
@@ -194,18 +178,17 @@ python -m pytest -q
 - OEISへ新規投稿する場合は、人間による独立した再実装と検証が必要。
 - 詳細は `CONTRIBUTING.md` と [Issue #356](https://github.com/teorth/erdosproblems/issues/356) を参照する。
 
-## 現在確認できている環境
+## 運用・検証の記録
 
-- 個人用`main`: Problem #84、#425、#1105の計算・検証資料を取り込み、
-  最新の`upstream/main`とも同期済み
-- 計算用ブランチ: 未統合のProblem #84資料を確認するため、
-  `compute-problem-84`だけを残している。最新の`main`は取り込み済み
-- PR用ブランチ: PR #406、#408、#412、#415のマージ後、ローカルとforkの
-  両方から削除済み
-- remote: 自分のforkを指す `origin` と、本家を指す `upstream`
-- Problem #84検証: C++20列挙器のコンパイルと、保存済み`n = 11`結果の
-  `verify_nauty_results.py`による検証に成功
-- validation: `.venv/bin/python scripts/validate.py` は2026-09-19に成功
+- 個人用`main`と上流PR用ブランチを分ける運用を`CLAUDE.md`に記録済み。
+- OEISリンクの評価には、最新の上流
+  [Notes on template fields](https://github.com/teorth/erdosproblems/blob/main/CONTRIBUTING.md#notes-on-template-fields)
+  を適用する。[個人用skill](.agents/skills/erdos-oeis-links/SKILL.md)も追加済み。
+- 間接的な関連では、数学的な対応と研究者にとっての有用性を説明する。
+  複数リンクは上流で認められているが、各リンクの役割と重複も確認する。
+- remoteは、自分のforkを指す`origin`と、本家を指す`upstream`。
+- 2026-10-12にローカル`main`を`origin/main`へfast-forwardした。
+- 過去の検証結果は、以下の各日付の進捗ログに記録している。
 
 ## 進捗ログ
 
@@ -321,10 +304,10 @@ python -m pytest -q
   SHA-256 `12adf4d7012a0e0fbd58baeb7662a23220dd73b078db8e5c0b3c39e07325a26e`
   の再確認に成功した。
 
-## 次にやること
+### 2026-10-12
 
-1. `compute-problem-84`にだけ残るC++列挙器と`n = 11`の検証資料を確認し、
-   個人用`main`へ統合する。
-2. 統合後に`compute-problem-84`を削除し、通常は`main`だけの状態へ戻す。
-3. Problem #425は人間による一次資料または独立再実装が得られるまでOEIS投稿を進めない。
-4. 次のOEIS登録候補を選ぶ前に、最新のIssueと`data/problems.yaml`を改めて確認する。
+- 9月19日以降に公開・承認されたOEIS数列と、上流PR #458、#459、
+  #460、#462、#463を本メモへ反映した。
+- 5件のPRがすべてopenであることをGitHubで確認した。
+- 個人用skillと上流のOEISリンク採用基準への参照を追記した。
+- 今後の予定・候補の優先順位は公開ファイルから外し、Codex上で管理する。
