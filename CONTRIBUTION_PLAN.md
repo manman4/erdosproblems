@@ -35,6 +35,7 @@ OEISでの公開・承認と、上流PRのマージは別々に記録します�
 | [#696](https://www.erdosproblems.com/696) | [A399769](https://oeis.org/A399769), [A400930](https://oeis.org/A400930) | 次項から1を引いた数を前項が割る約数列・素約数列の最大長 | [#460](https://github.com/teorth/erdosproblems/pull/460) | OEIS承認済み・PR open |
 | [#379](https://www.erdosproblems.com/379) | [A400962](https://oeis.org/A400962) | 全内部二項係数が、それぞれ何らかの素数のe乗で割り切れる最大のe | [#462](https://github.com/teorth/erdosproblems/pull/462) | OEIS承認済み・PR open |
 | [#175](https://www.erdosproblems.com/175) | [A292441](https://oeis.org/A292441), [A292442](https://oeis.org/A292442) | 中央二項係数の最大平方因子の平方根と最大平方因子（既存数列） | [#463](https://github.com/teorth/erdosproblems/pull/463) | 既存OEISへのリンク追加・PR open |
+| [#400](https://www.erdosproblems.com/400) | [A400979](https://oeis.org/A400979), [A400981](https://oeis.org/A400981) | g_2(n)とg_3(n)：階乗の積がn!を割るときの添字の和の最大超過 | [#471](https://github.com/teorth/erdosproblems/pull/471) | OEIS承認済み・PR open |
 
 これらのPRは`data/problems.yaml`の該当`oeis`欄だけを変更し、
 個人用の研究資料・運用ルールを含めずに提出しました。
@@ -51,6 +52,16 @@ OEISでの公開・承認と、上流PRのマージは別々に記録します�
   A292441(n) > 1、またはA292442(n) > 1と同値。
   A292442(n) = A292441(n)^2であり、二つのリンクは同じ主張の
   別表現である。問題ページで扱う最大素因数指数そのものではない。
+
+
+- Problem #400では階乗の個数kを固定して、g_k(n)の総和と典型的な大きさの
+  漸近挙動を問う。A400979はk=2、A400981はk=3の場合で、添字は正整数、
+  同じ添字の反復を許す。n=0への拡張ではg_2(0)=2、g_3(0)=3となる。
+- 部分和の[A400980](https://oeis.org/A400980)と
+  [A400982](https://oeis.org/A400982)も承認済み。
+  それぞれSum_{j=0..n} A400979(j)、Sum_{j=0..n} A400981(j)であり、
+  0番目の項を含める。PR #471に追加したリンクはA400979とA400981の2件だけ。
+  一般のkについての問題であるため、既存の`possible`は残した。
 
 ## 以前の成果（上流マージ済み）
 
@@ -307,7 +318,11 @@ python -m pytest -q
 ### 2026-10-12
 
 - 9月19日以降に公開・承認されたOEIS数列と、上流PR #458、#459、
-  #460、#462、#463を本メモへ反映した。
-- 5件のPRがすべてopenであることをGitHubで確認した。
+  #460、#462、#463、#471を本メモへ反映した。
+- 6件のPRがすべてopenであることをGitHubで確認した。
 - 個人用skillと上流のOEISリンク採用基準への参照を追記した。
 - 今後の予定・候補の優先順位は公開ファイルから外す。
+- Problem #400に関連するA400979、A400980、A400981、A400982の承認を記録した。
+- 最新の`upstream/main`を基点とする`compute-problem-400`からPR #471を提出した。
+  `data/problems.yaml`の`oeis`欄1行だけの変更で、1コミット・1ファイルを
+  GitHub上でも確認した。リポジトリのvalidationと`git diff --check`は成功した。
