@@ -2872,7 +2872,7 @@
   status:
     state: "proved (Lean)"
     last_update: "2026-08-24"
-  oeis: ["N/A"]
+  oeis: ["A292441", "A292442"]
   formalized:
     state: "yes"
     last_update: "2026-09-02"
@@ -2888,7 +2888,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["possible"]
+  oeis: ["A398541", "possible"]
   formalized:
     state: "no"
     last_update: "2025-08-31"
@@ -4830,7 +4830,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["possible"]
+  oeis: ["A400352"]
   formalized:
     state: "no"
     last_update: "2025-08-31"
@@ -5651,7 +5651,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["A002858"]
+  oeis: ["A002858", "A400867"]
   formalized:
     state: "yes"
     last_update: "2026-03-17"
@@ -6270,7 +6270,7 @@
   status:
     state: "proved (Lean)"
     last_update: "2025-08-31"
-  oeis: ["A048279", "possible"]
+  oeis: ["A048279", "A400962"]
   formalized:
     state: "yes"
     last_update: "2025-08-31"
@@ -6399,7 +6399,7 @@
   status:
     state: "solved"
     last_update: "2026-07-02"
-  oeis: ["N/A"]
+  oeis: ["A401107", "A401108"]
   formalized:
     state: "yes"
     last_update: "2026-01-02"
@@ -6503,8 +6503,8 @@
     last_update: "2025-08-31"
   oeis: ["A388302"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-17"
   tags: ["number theory", "factorials"]
 
 - number: "394"
@@ -6618,7 +6618,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["possible"]
+  oeis: ["A400979", "A400981", "possible"]
   formalized:
     state: "yes"
     last_update: "2026-03-19"
@@ -6946,8 +6946,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-17"
   tags: ["number theory"]
 
 - number: "421"
@@ -7329,7 +7329,7 @@
   status:
     state: "proved (Lean)"
     last_update: "2026-02-04"
-  oeis: ["N/A"]
+  oeis: ["A401140"]
   formalized:
     state: "yes"
     last_update: "2026-08-03"
@@ -7655,7 +7655,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["possible"]
+  oeis: ["A401176", "possible"]
   formalized:
     state: "yes"
     last_update: "2025-08-31"
@@ -9132,7 +9132,7 @@
   tags: ["graph theory", "ramsey theory"]
 
 - number: "552"
-  prize: "no"
+  prize: "$100"
   informal_status:
     state: "open"
     last_update: "2025-08-31"
@@ -9481,8 +9481,8 @@
     last_update: "2025-08-31"
   oeis: ["A006856"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-17"
   tags: ["graph theory", "turan number"]
 
 - number: "574"
@@ -9722,8 +9722,8 @@
     last_update: "2025-08-31"
   oeis: ["A006065", "A008997"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-17"
   tags: ["geometry"]
 
 - number: "589"
@@ -10344,8 +10344,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-17"
   tags: ["graph theory", "chromatic number", "cycles"]
 
 - number: "627"
@@ -10862,8 +10862,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-17"
   tags: ["geometry", "distances"]
 
 - number: "658"
@@ -11350,8 +11350,8 @@
     last_update: "2025-08-31"
   oeis: ["A048670", "A058989"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-17"
   tags: ["number theory"]
 
 - number: "688"
@@ -11495,7 +11495,7 @@
   status:
     state: "solved (Lean)"
     last_update: "2026-05-11"
-  oeis: ["possible"]
+  oeis: ["A399769", "A400930"]
   formalized:
     state: "yes"
     last_update: "2026-10-12"
@@ -11528,7 +11528,7 @@
   status:
     state: "proved (Lean)"
     last_update: "2026-01-16"
-  oeis: ["possible"]
+  oeis: ["A400908"]
   formalized:
     state: "yes"
     last_update: "2026-08-04"
@@ -11749,7 +11749,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["possible"]
+  oeis: ["A390246", "possible"]
   formalized:
     state: "yes"
     last_update: "2026-10-13"
@@ -14668,7 +14668,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["possible"]
+  oeis: ["A401013", "A401014", "possible"]
   formalized:
     state: "yes"
     last_update: "2025-11-27"
@@ -14864,7 +14864,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["possible"]
+  oeis: ["A392185"]
   formalized:
     state: "yes"
     last_update: "2026-10-07"
@@ -15382,7 +15382,7 @@
   status:
     state: "open"
     last_update: "2025-08-31"
-  oeis: ["possible"]
+  oeis: ["A401022"]
   formalized:
     state: "yes"
     last_update: "2026-07-02"
@@ -16027,10 +16027,14 @@
     state: "open"
     last_update: "2025-08-31"
   formal_status:
-    state: "unformalized"
+    state: "Lean"
+    last_update: "2026-10-11"
+    url: "https://github.com/linrock/math-proofs/blob/1571a487465fb6a87f92dcc46f1bd71b0846c413/erdos-973/Solution.lean#L47"
+    note: "Theorem Erdos973.Palomar.not_erdos_973, formalizing the negative resolution
+      via the residual-polynomial method of arXiv:2608.02043 (PALOMAR-2026-09-20-000008)."
   status:
-    state: "open"
-    last_update: "2025-08-31"
+    state: "open (Lean)"
+    last_update: "2026-10-11"
   oeis: ["N/A"]
   formalized:
     state: "yes"
@@ -16560,7 +16564,7 @@
   formalized:
     state: "yes"
     last_update: "2025-12-10"
-  oeis: ["possible"]
+  oeis: ["A079008", "possible"]
   tags: ["number theory"]
 
 - number: "1005"
@@ -17895,7 +17899,7 @@
     state: "yes"
     last_update: "2025-12-30"
   comments: "contact number problem"
-  oeis: ["A045945", "possible"]
+  oeis: ["A045945", "A047932", "possible"]
   tags: ["geometry", "distances"]
 
 - number: "1085"
@@ -19575,7 +19579,7 @@
   formalized:
     state: "no"
     last_update: "2026-04-04"
-  oeis: ["possible"]
+  oeis: ["A121385", "possible"]
   tags: ["additive combinatorics", "arithmetic progressions"]
 
 - number: "1187"
@@ -20059,7 +20063,7 @@
   formalized:
     state: "no"
     last_update: "2026-04-04"
-  oeis: ["possible"]
+  oeis: ["A122027", "A122026"]
   tags: ["graph theory", "ramsey theory"]
 
 - number: "1217"

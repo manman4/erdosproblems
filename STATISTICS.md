@@ -10,7 +10,7 @@ The figures are still generated, and the per-problem table on the [main page](RE
 
 <!-- STATS:START -->
 There are 1221 problems in total, of which
-- [106](https://teorth.github.io/erdosproblems/?prize=yes) are attached to a monetary prize.
+- [107](https://teorth.github.io/erdosproblems/?prize=yes) are attached to a monetary prize.
 - [336](https://teorth.github.io/erdosproblems/?status=proved) have been proved.
   - [183](https://teorth.github.io/erdosproblems/?status=proved&formal=Lean) of these proofs have been formalized in [Lean](https://lean-lang.org/).
 - [139](https://teorth.github.io/erdosproblems/?status=disproved) have been disproved.
@@ -26,12 +26,12 @@ There are 1221 problems in total, of which
 - [593](https://teorth.github.io/erdosproblems/?status=open) appear to be completely open.
 - 11 have ambiguous statements.
 - 0 have a literature review requested.
-- [317](https://teorth.github.io/erdosproblems/?formal=Lean) have a *solution* formalized in [Lean](https://lean-lang.org/).  This need not be a subset of the solved problems above: a formalized solution that has not yet been digested by a human reader keeps its informal status (so can appear as, e.g., "open (Lean)").
-- [865](https://teorth.github.io/erdosproblems/?formalized=yes) have their *statements* formalized in [Lean](https://lean-lang.org/) in the [Formal Conjectures Repository](https://github.com/google-deepmind/formal-conjectures).
-- [342](https://teorth.github.io/erdosproblems/?oeis=linked) have been linked to 450 distinct [OEIS](https://oeis.org/) sequences, with a total of 533 links created.
-  - 90 of these OEIS sequences were added since the creation of this database (A387000 onwards).
-- [317](https://teorth.github.io/erdosproblems/?oeis=possible) are potentially related to an [OEIS](https://oeis.org/) sequence not already listed.
-  - 248 of these problems are not currently linked to any existing [OEIS](https://oeis.org/) sequence.
+- [318](https://teorth.github.io/erdosproblems/?formal=Lean) have a *solution* formalized in [Lean](https://lean-lang.org/).  This need not be a subset of the solved problems above: a formalized solution that has not yet been digested by a human reader keeps its informal status (so can appear as, e.g., "open (Lean)").
+- [872](https://teorth.github.io/erdosproblems/?formalized=yes) have their *statements* formalized in [Lean](https://lean-lang.org/) in the [Formal Conjectures Repository](https://github.com/google-deepmind/formal-conjectures).
+- [358](https://teorth.github.io/erdosproblems/?oeis=linked) have been linked to 474 distinct [OEIS](https://oeis.org/) sequences, with a total of 558 links created.
+  - 107 of these OEIS sequences were added since the creation of this database (A387000 onwards).
+- [310](https://teorth.github.io/erdosproblems/?oeis=possible) are potentially related to an [OEIS](https://oeis.org/) sequence not already listed.
+  - 235 of these problems are not currently linked to any existing [OEIS](https://oeis.org/) sequence.
 - 0 have a related sequence currently being submitted to the [OEIS](https://oeis.org/).
 - [1](https://teorth.github.io/erdosproblems/?oeis=inprogress) have a related sequence whose generation is currently in progress.
 <!-- STATS:END -->
