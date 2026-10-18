@@ -8,7 +8,7 @@ The figures are still generated, and the per-problem table on the [main page](RE
 
 **This page is auto-generated** by [scripts/generate_readme.py](scripts/generate_readme.py) from `data/problems.yaml`.  Do not hand-edit between the markers below; any such edits will be overwritten.
 
-In the manman4 fork, the frozen chart can be viewed on the separate [progress chart archive](PROGRESS.md) page.
+In the manman4 fork, a chart regenerated from the history CSV can be viewed on the separate [progress chart](PROGRESS.md) page.
 
 <!-- STATS:START -->
 There are 1221 problems in total, of which
