@@ -970,8 +970,8 @@
     last_update: "2026-08-24"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["graph theory", "turan number"]
 
 - number: "60"
@@ -2710,8 +2710,8 @@
     last_update: "2025-08-31"
   oeis: ["A000791"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["graph theory", "ramsey theory"]
 
 - number: "166"
@@ -3057,8 +3057,8 @@
     last_update: "2025-08-31"
   oeis: ["A389784"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["additive combinatorics"]
 
 - number: "187"
@@ -4849,8 +4849,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["number theory", "unit fractions"]
 
 - number: "295"
@@ -5692,8 +5692,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["number theory", "complete sequences"]
 
 - number: "345"
@@ -9561,8 +9561,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["graph theory"]
 
 - number: "579"
@@ -11594,8 +11594,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["combinatorics"]
 
 - number: "703"
@@ -12315,8 +12315,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["graph theory"]
 
 - number: "746"
@@ -12746,8 +12746,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["number theory"]
 
 - number: "772"
@@ -13656,8 +13656,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["geometry"]
 
 - number: "828"
@@ -15885,8 +15885,8 @@
     last_update: "2026-02-14"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["number theory", "divisors"]
 
 - number: "965"
@@ -16150,8 +16150,8 @@
     last_update: "2025-09-03"
   oeis: ["A053760", "A098990", "possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-22"
   tags: ["number theory"]
 
 - number: "981"
@@ -16772,8 +16772,8 @@
     state: "open"
     last_update: "2025-09-12"
   formalized:
-    state: "no"
-    last_update: "2025-09-10"
+    state: "yes"
+    last_update: "2026-10-22"
   oeis: ["possible"]
   tags: ["graph theory"]
 
@@ -17386,8 +17386,8 @@
     state: "open"
     last_update: "2025-09-28"
   formalized:
-    state: "no"
-    last_update: "2025-09-28"
+    state: "yes"
+    last_update: "2026-10-22"
   oeis: ["A007539"]
   comments: "multiply perfect numbers"
   tags: ["number theory"]
@@ -17645,8 +17645,8 @@
     state: "solved"
     last_update: "2025-10-05"
   formalized:
-    state: "no"
-    last_update: "2025-09-28"
+    state: "yes"
+    last_update: "2026-10-22"
   oeis: ["possible"]
   tags: ["geometry"]
 
@@ -17848,8 +17848,8 @@
     state: "disproved"
     last_update: "2025-10-14"
   formalized:
-    state: "no"
-    last_update: "2025-09-28"
+    state: "yes"
+    last_update: "2026-10-22"
   oeis: ["A076871", "A076872", "possible"]
   tags: ["number theory", "powerful"]
 
@@ -18830,8 +18830,8 @@
     state: "disproved"
     last_update: "2026-01-24"
   formalized:
-    state: "no"
-    last_update: "2026-01-23"
+    state: "yes"
+    last_update: "2026-10-22"
   oeis: ["A240842", "possible"]
   tags: ["number theory"]
 
@@ -19385,8 +19385,8 @@
     state: "not disprovable"
     last_update: "2026-03-19"
   formalized:
-    state: "no"
-    last_update: "2026-01-23"
+    state: "yes"
+    last_update: "2026-10-22"
   oeis: ["N/A"]
   tags: ["set theory", "ramsey theory"]
 
