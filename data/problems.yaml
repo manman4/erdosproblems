@@ -1819,8 +1819,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-23"
   tags: ["graph theory", "chromatic number", "set theory"]
 
 - number: "112"
@@ -3576,8 +3576,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-23"
   tags: ["geometry", "distances"]
 
 - number: "218"
@@ -7026,8 +7026,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-23"
   tags: ["number theory", "sidon sets"]
 
 - number: "426"
@@ -15968,8 +15968,8 @@
     last_update: "2025-08-31"
   oeis: ["A013928"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-23"
   tags: ["number theory"]
 
 - number: "970"
@@ -19289,8 +19289,8 @@
     state: "open"
     last_update: "2026-01-23"
   formalized:
-    state: "no"
-    last_update: "2026-01-23"
+    state: "yes"
+    last_update: "2026-10-23"
   oeis: ["N/A"]
   tags: ["set theory", "ramsey theory"]
 
@@ -19305,8 +19305,8 @@
     state: "not disprovable"
     last_update: "2026-01-24"
   formalized:
-    state: "no"
-    last_update: "2026-01-23"
+    state: "yes"
+    last_update: "2026-10-23"
   oeis: ["N/A"]
   tags: ["set theory", "ramsey theory"]
 
