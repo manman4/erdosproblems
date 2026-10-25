@@ -23,4 +23,15 @@ Follow the current upstream [CONTRIBUTING.md](https://github.com/teorth/erdospro
 - In the PR description, state the definition correspondence, material conventions, and any indirect relation. Disclose AI assistance under the current contribution rules.
 - Run the repository validator and `git diff --check`; inspect commits and the full diff against `upstream/main`, then verify the actual PR files and commits after creation.
 
+## Update personal records after creating the PR
+
+When linking a newly approved sequence, update both files in the user's OEIS checkout (normally `../OEIS` relative to this repository root) as part of the same workflow:
+
+- `数学ネタ/Erdos/OEIS_CANDIDATE_DECISIONS.md`: update the existing problem record with the approved A-number, PR URL, and verification scope. Follow that file's placement rules; keep detailed records in one section and avoid a duplicate short-table entry.
+- `数学ネタ/Erdos/README.md`: add the problem/A-number mapping to the correspondence table in problem-number order, using the existing relative Japanese-translation links and note format.
+
+The decision record and the correspondence table have different roles. Updating one does not complete the other; check both before reporting completion rather than waiting for a separate README request.
+
+Follow the OEIS checkout's `CLAUDE.md` and Markdown checks. Keep these personal record changes outside the upstream PR. Commit or push them only when explicitly requested for those records, respecting a commit-only request.
+
 This skill does not authorize remote changes or OEIS submissions. Follow the user's authorization and the current repository and OEIS rules.
