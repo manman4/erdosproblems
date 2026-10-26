@@ -9,11 +9,9 @@ Follow the current upstream [CONTRIBUTING.md](https://github.com/teorth/erdospro
 
 ## Assess relevance
 
-- Apply the upstream criterion: would a researcher interested in the problem plausibly find information on the OEIS page useful, or vice versa? Exclude extremely well known sequences as upstream requests.
-- Compare mathematical definitions, not just initial terms or an OEIS backlink. Check offsets, allowed indices, strict versus non-strict inequalities, and empty or degenerate cases.
-- A sequence need not be the exact function named in the problem. For a transformation, inverse, special case, or auxiliary quantity, explain the precise mathematical relation and why it is useful. Shared subject matter alone does not establish relevance; do not present an auxiliary sequence as the original function.
-- Multiple sequences are allowed. Explain their roles and consider whether transformed sequences add useful information or merely duplicate a link; this is a judgment call, not a one-link limit.
-- If an apparently unrelated sequence only matches computed terms, investigate the definitions and the upstream guidance before proposing a confirmed match.
+Locate the user's OEIS checkout (normally `../OEIS` relative to this repository root). Read `数学ネタ/Erdos/OEIS_CANDIDATE_DECISIONS.md` for the current judgment criteria and `数学ネタ/Erdos/reviews/README.md` for record placement and verification scope. These are the authoritative personal instructions; do not maintain a second copy of their criteria in this skill.
+
+Use the decision record as the entry point. For a migrated problem, follow its link and read/update `reviews/NNxx/NNNN.md`; for an unmigrated problem, use its existing decision-record entry. Apply the current upstream relevance and contribution rules alongside those personal instructions.
 
 ## Prepare a link-only PR
 
@@ -25,13 +23,10 @@ Follow the current upstream [CONTRIBUTING.md](https://github.com/teorth/erdospro
 
 ## Update personal records after creating the PR
 
-When linking a newly approved sequence, update both files in the user's OEIS checkout (normally `../OEIS` relative to this repository root) as part of the same workflow:
+Update both the authoritative problem record selected above and `数学ネタ/Erdos/README.md` in the OEIS checkout. Follow `reviews/README.md` for the separate OEIS registration status, upstream link status, dates, and index updates. Do not restore detailed text in a migrated decision-record entry.
 
-- `数学ネタ/Erdos/OEIS_CANDIDATE_DECISIONS.md`: update the existing problem record with the approved A-number, PR URL, and verification scope. Follow that file's placement rules; keep detailed records in one section and avoid a duplicate short-table entry.
-- `数学ネタ/Erdos/README.md`: add the problem/A-number mapping to the correspondence table in problem-number order, using the existing relative Japanese-translation links and note format.
+Add the problem/A-number mapping to the personal README correspondence table in problem-number order using its existing relative Japanese-translation links and note format. Check the problem record, applicable review index, and correspondence table before reporting completion.
 
-The decision record and the correspondence table have different roles. Updating one does not complete the other; check both before reporting completion rather than waiting for a separate README request.
-
-Follow the OEIS checkout's `CLAUDE.md` and Markdown checks. Keep these personal record changes outside the upstream PR. Commit or push them only when explicitly requested for those records, respecting a commit-only request.
+Follow the OEIS checkout's `CLAUDE.md` and Markdown checks. Keep personal records outside the upstream PR. Commit or push them only when explicitly requested for those records, respecting a commit-only request.
 
 This skill does not authorize remote changes or OEIS submissions. Follow the user's authorization and the current repository and OEIS rules.
