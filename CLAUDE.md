@@ -27,6 +27,9 @@ contribution and AI-use rules.
 
 ## Pull requests to upstream
 
+- Name new PR branches `compute-problem-<number>` (for example,
+  `compute-problem-425`) unless the user specifies another name.
+
 - Local `main` and `origin/main` are personal branches and may contain changes
   that do not belong in the upstream repository. Keep personal workflow rules
   and experiment history on the personal branches.
