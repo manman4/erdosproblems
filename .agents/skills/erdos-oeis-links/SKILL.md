@@ -11,7 +11,7 @@ Follow the current upstream [CONTRIBUTING.md](https://github.com/teorth/erdospro
 
 Locate the user's OEIS checkout (normally `../OEIS` relative to this repository root). Read `数学ネタ/Erdos/OEIS_CANDIDATE_DECISIONS.md` for the current judgment criteria and `数学ネタ/Erdos/reviews/README.md` for record placement and verification scope. These are the authoritative personal instructions; do not maintain a second copy of their criteria in this skill.
 
-Use the decision record as the entry point. For a migrated problem, follow its link and read/update `reviews/NNxx/NNNN.md`; for an unmigrated problem, use its existing decision-record entry. Apply the current upstream relevance and contribution rules alongside those personal instructions.
+Use `数学ネタ/Erdos/reviews/README.md` as the problem index, then read/update `reviews/NNxx/NNNN.md`. If a problem has no note, create one following the index instructions. Keep `OEIS_CANDIDATE_DECISIONS.md` for common criteria; do not add problem-specific entries there. Apply the current upstream relevance and contribution rules alongside those personal instructions.
 
 ## Prepare a link-only PR
 
@@ -23,7 +23,7 @@ Use the decision record as the entry point. For a migrated problem, follow its l
 
 ## Update personal records after creating the PR
 
-Update both the authoritative problem record selected above and `数学ネタ/Erdos/README.md` in the OEIS checkout. Follow `reviews/README.md` for the separate OEIS registration status, upstream link status, dates, and index updates. Do not restore detailed text in a migrated decision-record entry.
+Update both the problem note and `数学ネタ/Erdos/README.md` in the OEIS checkout. Follow `reviews/README.md` for the separate OEIS registration status, upstream link status, dates, and index updates.
 
 Add the problem/A-number mapping to the personal README correspondence table in problem-number order using its existing relative Japanese-translation links and note format. Check the problem record, applicable review index, and correspondence table before reporting completion.
 
