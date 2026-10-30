@@ -1803,8 +1803,8 @@
     last_update: "2026-04-05"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-29"
   tags: ["graph theory", "chromatic number", "cycles"]
 
 - number: "111"
@@ -12121,8 +12121,8 @@
     last_update: "2025-08-31"
   oeis: ["possible"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-29"
   tags: ["combinatorics", "geometry"]
 
 - number: "734"
@@ -14850,8 +14850,8 @@
     last_update: "2025-08-31"
   oeis: ["N/A"]
   formalized:
-    state: "no"
-    last_update: "2025-08-31"
+    state: "yes"
+    last_update: "2026-10-29"
   tags: ["graph theory"]
 
 - number: "901"
@@ -16514,8 +16514,8 @@
     state: "solved"
     last_update: "2025-09-07"
   formalized:
-    state: "no"
-    last_update: "2025-09-07"
+    state: "yes"
+    last_update: "2026-10-29"
   oeis: ["N/A"]
   tags: ["number theory", "diophantine approximation"]
 
@@ -18422,8 +18422,8 @@
     state: "solved"
     last_update: "2025-12-29"
   formalized:
-    state: "no"
-    last_update: "2025-09-28"
+    state: "yes"
+    last_update: "2026-10-29"
   oeis: ["N/A"]
   tags: ["analysis"]
 
@@ -19723,8 +19723,8 @@
     state: "solved"
     last_update: "2026-04-28"
   formalized:
-    state: "no"
-    last_update: "2026-04-04"
+    state: "yes"
+    last_update: "2026-10-29"
   oeis: ["possible"]
   tags: ["number theory", "analysis"]
 
@@ -19885,8 +19885,8 @@
     state: "solved"
     last_update: "2026-04-04"
   formalized:
-    state: "no"
-    last_update: "2026-04-04"
+    state: "yes"
+    last_update: "2026-10-29"
   oeis: ["possible"]
   tags: ["number theory"]
 
@@ -20077,8 +20077,8 @@
     state: "proved"
     last_update: "2026-04-21"
   formalized:
-    state: "no"
-    last_update: "2026-04-04"
+    state: "yes"
+    last_update: "2026-10-29"
   oeis: ["N/A"]
   tags: ["number theory", "divisors", "primitive sets"]
 
