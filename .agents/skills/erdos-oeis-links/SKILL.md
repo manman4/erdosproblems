@@ -18,6 +18,8 @@ Use `数学ネタ/Erdos/reviews/README.md` as the problem index, then read/updat
 - Read the personal `CLAUDE.md` upstream-PR rules before switching branches. Local `main` and `origin/main` are personal; start the PR branch from freshly fetched `upstream/main`.
 - Edit only the relevant `oeis` entry in `data/problems.yaml`. Follow upstream meanings for `possible`, `submitted`, `in progress`, and `N/A`; preserve `possible` when further relevant sequences remain to be identified.
 - Do not hand-edit the generated README or derived fields. Keep this skill and personal workflow files out of the upstream PR.
+- Use `Link Erdős problem <number> to OEIS <A-number>` for new links, following `Link Erdős problem 1206 to OEIS A401479`. For multiple links to the same problem, join the A-numbers with commas and a final `and`.
+- Use `Fix OEIS link for Erdős problem <number>` when correcting an existing link. Give the old and new A-numbers in the PR description.
 - In the PR description, state the definition correspondence, material conventions, and any indirect relation. Disclose AI assistance under the current contribution rules.
 - Run the repository validator and `git diff --check`; inspect commits and the full diff against `upstream/main`, then verify the actual PR files and commits after creation.
 
